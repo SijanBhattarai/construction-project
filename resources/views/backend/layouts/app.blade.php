@@ -10,7 +10,7 @@
 
     <!-- Meta Tags -->
     <meta name="description" content="">
-    <meta name="author" content=" Bharat Phuyal Shalabh Adhikari Sijan Bhattarai">
+    <meta name="author" content="Shalabh Adhikari Sijan Bhattarai">
 
     <!-- Title-->
     <title>{{ config('app.name') }} - @yield('title', 'Page')</title>

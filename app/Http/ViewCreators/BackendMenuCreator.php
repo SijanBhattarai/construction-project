@@ -42,49 +42,21 @@ class BackendMenuCreator
             'class' => false,
             'route' => route('menu.index'),
             'icon' => 'md md-web',
-            'title' => 'Menu'
+            'title' => 'Account'
         ]);
 
         array_push($menu, [
             'class' => false,
             'route' => route('gallery.index'),
             'icon' => 'md md-list',
-            'title' => 'gallery'
+            'title' => 'Reports'
         ]);
 
         array_push($menu, [
             'class' => false,
             'route' => route('document.index'),
             'icon' => 'md md-list',
-            'title' => 'document'
-        ]);
-
-        array_push($menu, [
-            'class' => false,
-            'route' => route('page.index'),
-            'icon' => 'md md-list',
-            'title' => 'page'
-        ]);
-
-        array_push($menu, [
-            'class' => false,
-            'route' => route('email.index'),
-            'icon' => 'md md-list',
-            'title' => 'email'
-        ]);
-
-        array_push($menu, [
-            'class' => false,
-            'route' => route('notice.index'),
-            'icon' => 'md md-list',
-            'title' => 'notice'
-        ]);
-
-        array_push($menu, [
-            'class' => false,
-            'route' => route('form.index'),
-            'icon' => 'md md-list',
-            'title' => 'form'
+            'title' => 'Administration'
         ]);
 
 

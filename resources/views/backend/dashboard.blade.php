@@ -2,7 +2,7 @@
 
 <!-- @section('title', 'Home') -->
 
-@section('guest')
+@section('content')
     <section>
         <div class="section-body">
             <div class="row">
