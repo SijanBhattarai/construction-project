@@ -37,24 +37,30 @@ class BackendMenuCreator
             'icon' => 'md md-home',
             'title' => 'Home'
         ];
-
         array_push($menu, [
             'class' => false,
-            'route' => route('menu.index'),
-            'icon' => 'md md-web',
-            'title' => 'Account'
+            'route' => route('site.index'),
+            'icon' => 'md md-list',
+            'title' => 'Site'
         ]);
 
         array_push($menu, [
             'class' => false,
-            'route' => route('gallery.index'),
+            'route' => route('account.index'),
+            'icon' => 'md md-web',
+            'title' => 'Accounting'
+        ]);
+
+        array_push($menu, [
+            'class' => false,
+            'route' => route('report.index'),
             'icon' => 'md md-list',
             'title' => 'Reports'
         ]);
 
         array_push($menu, [
             'class' => false,
-            'route' => route('document.index'),
+            'route' => route('administration.index'),
             'icon' => 'md md-list',
             'title' => 'Administration'
         ]);
