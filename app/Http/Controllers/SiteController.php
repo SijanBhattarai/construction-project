@@ -58,19 +58,19 @@ class SiteController extends Controller
     }
 
     /**
-     * @param Post $post
+     * @param Site $post
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit(Post $post)
+    public function edit(Site $site)
     {
 
 
-        return view('backend.post.edit',compact('post'));
+        return view('backend.site.edit',compact('site'));
     }
 
     /**
-     * @param UpdatePost $request
-     * @param Post $post
+     * @param UpdateSite $request
+     * @param Site $site
      * @return mixed
      */
     public function update(UpdateSite $request, Site $site)
@@ -80,8 +80,6 @@ class SiteController extends Controller
             $data = $request->data();
 
             $site->update($data);
-
-            // $post->syncTags($data['tags']);
 
         });
 
