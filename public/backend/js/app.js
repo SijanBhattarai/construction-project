@@ -29,7 +29,7 @@ $(document).on("click", ".item-delete", function () {
 $(document).ready(function () {
     $(".search").on("keyup", function () {
         var $search = $(this);
-        $(".menu").each(function () {
+        $(".accounthead").each(function () {
             var $menu = $(this);
             $(this).find(".title").each(function () {
                 if (~$(this).html().toLowerCase().indexOf($search.val().toLowerCase())) {

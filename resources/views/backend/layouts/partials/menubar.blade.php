@@ -60,7 +60,7 @@
                 </li>
             @endforeach
 
-        </ul><!--end .main-menu -->
+        </ul><!--end .main-accounthead -->
         <!-- END MAIN MENU -->
         <div class="menubar-foot-panel">
             <small class="no-linebreak hidden-folded">

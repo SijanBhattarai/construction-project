@@ -15,7 +15,7 @@ class BackendMenuCreator
     protected $user;
 
     /**
-     * Create a new menu bar composer.
+     * Create a new accounthead bar composer.
      */
 
     /**
@@ -60,15 +60,15 @@ class BackendMenuCreator
 
         array_push($menu, [
             'class' => false,
-            'route' => route('administration.index'),
+            'route' => route('accounthead.index'),
             'icon' => 'md md-list',
-            'title' => 'Administration'
+            'title' => 'AccountHead'
         ]);
 
 
         /*
-         * Sample for adding menu
-         * array_push($menu,
+         * Sample for adding accounthead
+         * array_push($accounthead,
             [
                 'class' => {desired class},
                 'route' => {desired route or url},

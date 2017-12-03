@@ -357,14 +357,14 @@
         .after(this.$newElement)
         .appendTo(this.$newElement);
       this.$button = this.$newElement.children('button');
-      this.$menu = this.$newElement.children('.dropdown-menu');
+      this.$menu = this.$newElement.children('.dropdown-accounthead');
       this.$menuInner = this.$menu.children('.inner');
       this.$searchbox = this.$menu.find('input');
 
       this.$element.removeClass('bs-select-hidden');
 
       if (this.options.dropdownAlignRight)
-        this.$menu.addClass('dropdown-menu-right');
+        this.$menu.addClass('dropdown-accounthead-right');
 
       if (typeof id !== 'undefined') {
         this.$button.attr('data-id', id);
@@ -413,7 +413,7 @@
             },
             'shown.bs.select': function () {
               that.$element
-                .val(that.$element.val()) // set the value to hide the validation message in Chrome when menu is opened
+                .val(that.$element.val()) // set the value to hide the validation message in Chrome when accounthead is opened
                 .off('shown.bs.select');
             },
             'rendered.bs.select': function () {
@@ -474,11 +474,11 @@
           this.options.template.caret +
           '</span>' +
           '</button>' +
-          '<div class="dropdown-menu open">' +
+          '<div class="dropdown-accounthead open">' +
           header +
           searchbox +
           actionsbox +
-          '<ul class="dropdown-menu inner" role="menu">' +
+          '<ul class="dropdown-accounthead inner" role="accounthead">' +
           '</ul>' +
           donebutton +
           '</div>' +
@@ -766,8 +766,8 @@
 
       text.className = 'text';
       newElement.className = this.$menu[0].parentNode.className + ' open';
-      menu.className = 'dropdown-menu open';
-      menuInner.className = 'dropdown-menu inner';
+      menu.className = 'dropdown-accounthead open';
+      menuInner.className = 'dropdown-accounthead inner';
       divider.className = 'divider';
 
       text.appendChild(document.createTextNode('Inner text'));
@@ -943,7 +943,7 @@
         // Get correct width if element is hidden
         var $selectClone = this.$menu.parent().clone().appendTo('body'),
             $selectClone2 = this.options.container ? this.$newElement.clone().appendTo('body') : $selectClone,
-            ulWidth = $selectClone.children('.dropdown-menu').outerWidth(),
+            ulWidth = $selectClone.children('.dropdown-accounthead').outerWidth(),
             btnWidth = $selectClone2.css('width', 'auto').children('button').outerWidth();
 
         $selectClone.remove();
@@ -1072,7 +1072,7 @@
       var that = this,
           $document = $(document);
 
-      this.$newElement.on('touchstart.dropdown', '.dropdown-menu', function (e) {
+      this.$newElement.on('touchstart.dropdown', '.dropdown-accounthead', function (e) {
         e.stopPropagation();
       });
 
@@ -1110,7 +1110,7 @@
             prevValue = that.$element.val(),
             prevIndex = that.$element.prop('selectedIndex');
 
-        // Don't close on multi choice menu
+        // Don't close on multi choice accounthead
         if (that.multiple) {
           e.stopPropagation();
         }
@@ -1465,7 +1465,7 @@
 
       if (that.options.container) $parent = that.$menu;
 
-      $items = $('[role=menu] li', $parent);
+      $items = $('[role=accounthead] li', $parent);
 
       isActive = that.$newElement.hasClass('open');
 
@@ -1488,7 +1488,7 @@
           that.$button.focus();
         }
         // $items contains li elements when liveSearch is enabled
-        $items = $('[role=menu] li' + selector, $parent);
+        $items = $('[role=accounthead] li' + selector, $parent);
         if (!$this.val() && !/(38|40)/.test(e.keyCode.toString(10))) {
           if ($items.filter('.active').length === 0) {
             $items = that.$menuInner.find('li');
@@ -1582,7 +1582,7 @@
         $items.eq(keyIndex[count - 1]).children('a').focus();
       }
 
-      // Select focused option if "Enter", "Spacebar" or "Tab" (when selectOnTab is true) are pressed inside the menu.
+      // Select focused option if "Enter", "Spacebar" or "Tab" (when selectOnTab is true) are pressed inside the accounthead.
       if ((/(13|32)/.test(e.keyCode.toString(10)) || (/(^9$)/.test(e.keyCode.toString(10)) && that.options.selectOnTab)) && isActive) {
         if (!/(32)/.test(e.keyCode.toString(10))) e.preventDefault();
         if (!that.options.liveSearch) {
@@ -1716,8 +1716,8 @@
 
   $(document)
       .data('keycount', 0)
-      .on('keydown.bs.select', '.bootstrap-select [data-toggle=dropdown], .bootstrap-select [role="menu"], .bs-searchbox input', Selectpicker.prototype.keydown)
-      .on('focusin.modal', '.bootstrap-select [data-toggle=dropdown], .bootstrap-select [role="menu"], .bs-searchbox input', function (e) {
+      .on('keydown.bs.select', '.bootstrap-select [data-toggle=dropdown], .bootstrap-select [role="accounthead"], .bs-searchbox input', Selectpicker.prototype.keydown)
+      .on('focusin.modal', '.bootstrap-select [data-toggle=dropdown], .bootstrap-select [role="accounthead"], .bs-searchbox input', function (e) {
         e.stopPropagation();
       });
 

@@ -37,7 +37,6 @@ Route::get('account', 'AccountController@index')->name('account.index');
 
 Route::get('reports', 'ReportsController@index')->name('report.index');
 
-Route::get('administration', 'AdministrationController@index')->name('administration.index');
 
 Route::group([ 'as' => 'site.', 'prefix' => 'post' ], function ()
 
@@ -49,4 +48,15 @@ Route::group([ 'as' => 'site.', 'prefix' => 'post' ], function ()
     Route::put('{site}', 'SiteController@update')->name('update');
     Route::delete('{site}', 'SiteController@destroy')->name('destroy');
 //    Route::post('/datatable','SiteController@datatable')->name('datatable');
+});
+Route::group([ 'as' => 'accounthead.', 'prefix' => 'accounthead' ], function () {
+    Route::get('', 'AccountHeadController@index')->name('index');
+    Route::post('', 'AccountHeadController@store')->name('store');
+    Route::put('', 'AccountHeadController@update')->name('update');
+    Route::delete('{accounthead}', 'AccountHeadController@destroy')->name('destroy');
+
+    Route::group(['as' => 'subMenu.'], function () {
+        Route::post('{accounthead}/sub-accounthead', 'AccountHead@storeSubMenu')->name('store');
+        Route::delete('{accounthead}/sub-accounthead/{subMenu}', 'AccountHead@destroySubMenu')->name('destroy');
+    });
 });

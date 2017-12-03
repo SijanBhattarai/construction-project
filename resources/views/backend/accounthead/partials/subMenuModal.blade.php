@@ -1,4 +1,4 @@
-{{ Form::open(['route' => ['menu.subMenu.store', $menu->slug], 'class' => 'form']) }}
+{{ Form::open(['route' => ['accounthead', $menu->slug], 'class' => 'form']) }}
 <div class="modal fade" id="addSubMenu" tabindex="-1" role="dialog" aria-labelledby="addSubMenuLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
