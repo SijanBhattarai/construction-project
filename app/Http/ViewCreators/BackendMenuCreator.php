@@ -46,9 +46,9 @@ class BackendMenuCreator
 
         array_push($menu, [
             'class' => false,
-            'route' => route('account.index'),
+            'route' => route('transaction.index'),
             'icon' => 'md md-web',
-            'title' => 'Accounting'
+            'title' => 'Transaction'
         ]);
 
         array_push($menu, [

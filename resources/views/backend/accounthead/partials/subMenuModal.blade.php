@@ -6,7 +6,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="addSubMenuLabel">Add Sub Menu ({{ $accounthead->name }})</h4>
+                <h4 class="modal-title" id="addSubMenuLabel">Add Sub Menu ({{ $accounthead->accountname }})</h4>
             </div>
             <div class="modal-body">
                 {{--<div class="form-group">--}}
@@ -14,12 +14,12 @@
                     {{--<label class="page">Page</label>--}}
                 {{--</div>--}}
                 <div class="form-group">
-                    {{ Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '(same as page title)']) }}
-                    <label class="name">Name</label>
+                    {{ Form::text('accountname', old('accountname'), ['class' => 'form-control', 'placeholder' => '(same as page title)']) }}
+                    <label class="accountname">Name</label>
                 </div>
                 {{--<div class="form-group">--}}
                     {{--{{ Form::text('custom_url', old('custom_url'), ['class' => 'form-control', 'placeholder' => '(enter your custom URL here..)']) }}--}}
-                    {{--<label class="name">Custom URL</label>--}}
+                    {{--<label class="accountname">Custom URL</label>--}}
                 {{--</div>--}}
             </div>
             <div class="modal-footer">

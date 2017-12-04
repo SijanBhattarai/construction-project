@@ -60,3 +60,21 @@ Route::group([ 'as' => 'accounthead.', 'prefix' => 'accounthead' ], function () 
 //        Route::delete('{accounthead}/sub-accounthead/{subMenu}', 'AccountHead@destroySubMenu')->name('destroy');
 //    });
 });
+//logout loigin route
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::get('logout', 'Auth\LoginController@logout');
+
+//transaction route
+
+Route::group([ 'as' => 'transaction.', 'prefix' => 'transaction' ], function () {
+    Route::get('', 'TransactionController@index')->name('index');
+    Route::post('', 'TransactionController@store')->name('store');
+    Route::put('', 'TransactionController@update')->name('update');
+    Route::delete('{transaction}', 'TransactionController@destroy')->name('destroy');
+
+//    Route::group(['as' => 'subMenu.'], function () {
+//        Route::post('{transaction}/sub-transaction', 'AccountHead@storeSubMenu')->name('store');
+//        Route::delete('{transaction}/sub-transaction/{subMenu}', 'AccountHead@destroySubMenu')->name('destroy');
+//    });
+});

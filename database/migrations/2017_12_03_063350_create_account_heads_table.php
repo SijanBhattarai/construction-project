@@ -17,7 +17,10 @@ class CreateAccountHeadsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->timestamps();
-            $table->string('name');
+            $table->string('accountname');
+            $table->string('view', 100);
+            $table->boolean('is_published')->default(false);
+            $table->boolean('is_primary')->default(false);
             $table->string('slug', 100)->unique();
 
         });

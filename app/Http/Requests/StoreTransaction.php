@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateAccountHead extends FormRequest
+class StoreTransaction extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,5 +26,17 @@ class UpdateAccountHead extends FormRequest
         return [
             //
         ];
+    }
+    public function Data()
+    {
+        $inputs = [
+            'name'    => $this->get('name'),
+            'accounthead'    => $this->get('accounthead'),
+            'amount'    => $this->get(('amount')),
+            'site'    => $this->get('site'),
+            'slug'  =>str_slug($this->get('name'))
+        ];
+
+        return $inputs;
     }
 }

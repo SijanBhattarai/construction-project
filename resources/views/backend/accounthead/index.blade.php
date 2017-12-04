@@ -38,7 +38,7 @@
                             <div class="card panel {{ session('collapse_in') == $accounthead->slug ? 'expanded' : '' }}" id="{{ $accounthead->slug }}">
                                 <input type="hidden" name="order[]" value="{{ $accounthead->slug }}">
                                 <div class="card-head {{ session('collapse_in') == $accounthead->slug ? '' : 'collapsed' }}" data-toggle="collapse" data-parent="#accounthead-accordion" data-target="#accounthead-accordion-{{ $key }}">
-                                    <header>{{ $accounthead->name }}</header>
+                                    <header>{{ $accounthead->accountname }}</header>
                                     {{--<div class="tools">--}}
 
                                         {{--<button type="button" class="btn btn-icon-toggle btn-add-sub-accounthead" data-url="{{ route('component.subMenuModal', $accounthead->slug) }}" data-toggle="tooltip" data-placement="top" data-original-title="Add Sub Menu"  data-loading-text="<i class='fa fa-spinner fa-spin'></i>">--}}
@@ -103,8 +103,8 @@
                 </div>
 
                     <div class="form-group">
-                        {{ Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '(same as page title)']) }}
-                        <label class="name">Name</label>
+                        {{ Form::text('accountname', old('accountname'), ['class' => 'form-control', 'placeholder' => '(same as page title)']) }}
+                        <label class="accountname">Name</label>
                     </div>
                        <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -10,15 +10,21 @@ class AccountHeadController extends Controller
 {
     public function index()
     {
-        $accountheads = AccountHead::latest()->get([ 'name']);
+        $accountheads = AccountHead::latest()->get([ 'slug','accountname','is_published']);
 
         return view('backend.accounthead.index', compact('accountheads'));
     }
+    public function create()
+    {
+        return view('backend.page.create');
+    }
+
     public function store(StoreAccountHead $request)
     {
-        $accounthead = AccountHead::create($request->Data());
+            $accounthead = AccountHead::create($request->Data());
 
         return back()->withSuccess(trans('messages.create_success', [ 'entity' => 'AccountHead' ]))->with('collapse_in', $accounthead->id);
+
     }
 
 
@@ -64,8 +70,12 @@ class AccountHeadController extends Controller
     public function destroy(AccountHead $accounthead)
     {
         $accounthead->delete();
+        return back()->withSuccess(trans('message.delete_success', [ 'entity' => 'AccountHead' ]));
 
-
+    }
+       public function shows(AccountHead $accounthead)
+    {
+        return view($accounthead->view, compact('accounthead'));
     }
 
 
