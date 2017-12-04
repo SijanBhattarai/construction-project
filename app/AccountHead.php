@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class AccountHead extends Model
 {
     protected $fillable = [
-      'name'
+
+      'name',
+        'slug'
     ];
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

@@ -44,11 +44,11 @@
                                         {{--<button type="button" class="btn btn-icon-toggle btn-add-sub-accounthead" data-url="{{ route('component.subMenuModal', $accounthead->slug) }}" data-toggle="tooltip" data-placement="top" data-original-title="Add Sub Menu"  data-loading-text="<i class='fa fa-spinner fa-spin'></i>">--}}
                                             {{--<i class="md md-add"></i>--}}
                                         {{--</button>--}}
-                                        {{--@unless($accounthead->is_primary)--}}
-                                            {{--<a class="btn btn-icon-toggle btn-delete" data-url="{{ route('accounthead', $accounthead->slug) }}">--}}
-                                                {{--<i class="md md-delete"></i>--}}
-                                            {{--</a>--}}
-                                        {{--@endunless--}}
+                                        @unless($accounthead->is_primary)
+                                            <a class="btn btn-icon-toggle btn-delete" data-url="{{ route('accounthead.destroy', $accounthead->slug) }}">
+                                                <i class="md md-delete"></i>
+                                            </a>
+                                        @endunless
                                     {{--</div>--}}
                                 </div>
                                 {{--<div id="accounthead-accordion-{{ $key }}" class="{{ session('collapse_in') == $accounthead->slug ? 'collapse in' : 'collapse' }}">--}}
@@ -154,7 +154,7 @@
                         "url": $button.data("url"),
                         "data": {"_method": "DELETE"},
                         "success": function (response) {
-                            if (response.Menu) {
+                            if (response.Accounthead) {
                                 $button.closest(".panel").detach();
                             } else {
                                 $button.closest(".dd-item").detach();

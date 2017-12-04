@@ -55,8 +55,8 @@ Route::group([ 'as' => 'accounthead.', 'prefix' => 'accounthead' ], function () 
     Route::put('', 'AccountHeadController@update')->name('update');
     Route::delete('{accounthead}', 'AccountHeadController@destroy')->name('destroy');
 
-    Route::group(['as' => 'subMenu.'], function () {
-        Route::post('{accounthead}/sub-accounthead', 'AccountHead@storeSubMenu')->name('store');
-        Route::delete('{accounthead}/sub-accounthead/{subMenu}', 'AccountHead@destroySubMenu')->name('destroy');
-    });
+//    Route::group(['as' => 'subMenu.'], function () {
+//        Route::post('{accounthead}/sub-accounthead', 'AccountHead@storeSubMenu')->name('store');
+//        Route::delete('{accounthead}/sub-accounthead/{subMenu}', 'AccountHead@destroySubMenu')->name('destroy');
+//    });
 });

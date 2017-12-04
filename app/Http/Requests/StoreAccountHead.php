@@ -31,7 +31,8 @@ class StoreAccountHead extends FormRequest
     public function Data()
     {
         $inputs = [
-            'name'    => $this->get('name')
+            'name'    => $this->get('name'),
+            'slug'  =>str_slug($this->get('name'))
         ];
 
         return $inputs;

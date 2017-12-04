@@ -63,22 +63,14 @@ class AccountHeadController extends Controller
      */
     public function destroy(AccountHead $accounthead)
     {
-        if ($accounthead->delete())
-        {
-            return response()->json([
-                'Result' => 'OK',
-                'AccountHead'   => true
-            ]);
-        }
+        $accounthead->delete();
 
-        return response()->json([
-            'Result' => 'Error'
-        ], 500);
+
     }
+
 
     /**
      * @param AccountHead $accounthead
-     * @param SubAccountHead $subAccountHead
      * @return \Illuminate\Http\JsonResponse
      * @throws \Exception
      */
