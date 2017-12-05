@@ -66,15 +66,14 @@ Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
 
 //transaction route
+Route::group([ 'as' => 'transaction.', 'prefix' => 'transaction' ], function ()
 
-Route::group([ 'as' => 'transaction.', 'prefix' => 'transaction' ], function () {
+{
     Route::get('', 'TransactionController@index')->name('index');
-    Route::post('', 'TransactionController@store')->name('store');
-    Route::put('', 'TransactionController@update')->name('update');
+    Route::get('create', 'TransactionController@create')->name('create');
+    Route::post('store', 'TransactionController@store')->name('store');
+    Route::get('{transaction}/edit', 'TransactionController@edit')->name('edit');
+    Route::put('{transaction}', 'TransactionController@update')->name('update');
     Route::delete('{transaction}', 'TransactionController@destroy')->name('destroy');
-
-//    Route::group(['as' => 'subMenu.'], function () {
-//        Route::post('{transaction}/sub-transaction', 'AccountHead@storeSubMenu')->name('store');
-//        Route::delete('{transaction}/sub-transaction/{subMenu}', 'AccountHead@destroySubMenu')->name('destroy');
-//    });
+//    Route::post('/datatable','TransactionController@datatable')->name('datatable');
 });

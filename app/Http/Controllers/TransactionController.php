@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\AccountHead;
+use App\Site;
 use App\Transaction;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTransaction;
@@ -12,7 +13,7 @@ class TransactionController extends Controller
     public function index()
     {
         $transactions = Transaction::latest()->get([ 'name']);
-        $accountheads = AccountHead::published()->primary(false)->pluck('accountname', 'id');
+        $accountheads = AccountHead::published()->primary(false)->pluck('accountname');
         return view('backend.transaction.index', compact('transactions','accountheads'));
     }
     public function store(StoreTransaction $request)
@@ -22,6 +23,13 @@ class TransactionController extends Controller
         return back()->withSuccess(trans('messages.create_success', [ 'entity' => 'Transaction' ]))->with('collapse_in', $transaction->id);
     }
 
+    public function create()
+    {
+
+        $transactions = Transaction::latest()->get([ 'name']);
+        $accountheads = AccountHead::published()->primary(false)->pluck('accountname');
+        $sites = Site::published()->primary(false)->pluck('name');
+        return view('backend.transaction.create', compact('transactions','accountheads','sites'));    }
 
     /**
      * @param StoreTransaction $request

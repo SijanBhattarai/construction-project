@@ -18,7 +18,6 @@ class CreateAccountHeadsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('accountname');
-            $table->string('view', 100);
             $table->boolean('is_published')->default(false);
             $table->boolean('is_primary')->default(false);
             $table->string('slug', 100)->unique();

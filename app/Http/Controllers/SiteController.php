@@ -90,7 +90,7 @@ class SiteController extends Controller
      * @param Post $post
      * @return mixed
      */
-    public function destroy(Post $post)
+    public function destroy(Site $site)
     {
 
         $site->delete();
