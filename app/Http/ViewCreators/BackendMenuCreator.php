@@ -14,9 +14,7 @@ class BackendMenuCreator
      */
     protected $user;
 
-    /**
-     * Create a new accounthead bar composer.
-     */
+
 
     /**
      * Bind data to the view.
@@ -63,6 +61,12 @@ class BackendMenuCreator
             'route' => route('accounthead.index'),
             'icon' => 'md md-list',
             'title' => 'AccountHead'
+        ]);
+        array_push($menu, [
+            'class' => false,
+            'route' => route('user.index'),
+            'icon'  => 'md md-accessibility',
+            'title' => 'Users'
         ]);
 
 

@@ -4,39 +4,37 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreSite extends FormRequest
+class StoreUser extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
-     *
      * @return bool
      */
     public function authorize()
     {
-        return True;
+        return true;
     }
 
     /**
      * Get the validation rules that apply to the request.
-     *
      * @return array
      */
     public function rules()
     {
         return [
-            //
+            'name'     => 'required|max:200',
+            'email'    => 'required',
+            'password' => 'required|confirmed',
         ];
     }
 
     public function data()
     {
-        $data = [
-            'name'              => $this->get('name'),
-            'slug'              => str_slug($this->get('name')),
-            'location'          => $this->get('location', null),
-            'description'       => $this->get('description'),
+        return $data = [
+            'name'     => $this->get('name'),
+            'slug' => str_slug($this->get('name')),
+            'email'    => $this->get('email'),
+            'password' => bcrypt($this->get('password'))
         ];
-
-        return $data;
     }
 }

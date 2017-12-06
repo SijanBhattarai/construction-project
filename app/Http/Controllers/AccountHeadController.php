@@ -10,7 +10,7 @@ class AccountHeadController extends Controller
 {
     public function index()
     {
-        $accountheads = AccountHead::latest()->get([ 'slug','accountname','is_published']);
+        $accountheads = AccountHead::latest()->get([ 'slug','accountname']);
 
         return view('backend.accounthead.index', compact('accountheads'));
     }
@@ -47,18 +47,6 @@ class AccountHeadController extends Controller
             $accounthead->update([ 'order' => $order ]);
         }
 
-        if ($request->has('sub_menu_order'))
-        {
-            foreach ($request->get('sub_menu_order') as $accountheadId => $subAccountHeadOrder)
-            {
-                foreach ($subAccountHeadOrder as $order => $subAccountHeadId)
-                {
-                    $subAccountHead = SubAccountHead::find($subAccountHeadId);
-
-                    $subAccountHead->update([ 'order' => $order ]);
-                }
-            }
-        }
 
         return back()->withSuccess(trans('messages.update_success', [ 'entity' => 'AccountHead Order' ]));
     }

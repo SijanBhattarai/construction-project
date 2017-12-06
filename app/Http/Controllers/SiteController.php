@@ -31,7 +31,7 @@ class SiteController extends Controller
     }
 
     /**
-     * @param StorePost $request
+     * @param StoreSite $request
      * @return mixed
      */
     public function store(StoreSite $request)
@@ -41,7 +41,6 @@ class SiteController extends Controller
             $data = $request->data();
 
             Site::create($data);
-
 
         });
 

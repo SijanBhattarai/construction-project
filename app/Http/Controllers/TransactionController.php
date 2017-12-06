@@ -13,7 +13,7 @@ class TransactionController extends Controller
     public function index()
     {
         $transactions = Transaction::latest()->get([ 'name']);
-        $accountheads = AccountHead::published()->primary(false)->pluck('accountname');
+        $accountheads = AccountHead::latest()->get(['accountname']);
         return view('backend.transaction.index', compact('transactions','accountheads'));
     }
     public function store(StoreTransaction $request)
@@ -27,8 +27,8 @@ class TransactionController extends Controller
     {
 
         $transactions = Transaction::latest()->get([ 'name']);
-        $accountheads = AccountHead::published()->primary(false)->pluck('accountname');
-        $sites = Site::published()->primary(false)->pluck('name');
+        $accountheads = AccountHead::latest()->get(['accountname']);
+        $sites = Site::latest()->get(['name']);
         return view('backend.transaction.create', compact('transactions','accountheads','sites'));    }
 
     /**

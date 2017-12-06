@@ -30,6 +30,8 @@
                             <tr>
                                 <td>{{++$key}}</td>
                                 <td>{{ str_limit($site->name, 47) }}</td>
+                                <td>{{str_limit($site->location,47)}}</td>
+                                <td>{{str_limit($site->description,47)}}</td>
                                 <td class="text-right">
                                     <a href="{{route('site.edit', $site->name)}}" class="btn btn-flat btn-primary btn-xs">
                                         Edit
