@@ -6,7 +6,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="addSubMenuLabel">Add Sub Menu ({{ $accounthead->accountname }})</h4>
+                <h4 class="modal-title" id="addSubMenuLabel">Add Account Head ({{ $accounthead->accountname }})</h4>
             </div>
             <div class="modal-body">
                 {{--<div class="form-group">--}}
@@ -14,7 +14,7 @@
                     {{--<label class="page">Page</label>--}}
                 {{--</div>--}}
                 <div class="form-group">
-                    {{ Form::text('accountname', old('accountname'), ['class' => 'form-control', 'placeholder' => '(same as page title)']) }}
+                    {{ Form::text('accountname', old('accountname'), ['class' => 'form-control', 'placeholder' => '(Enter the Account Head)']) }}
                     <label class="accountname">Name</label>
                 </div>
                 {{--<div class="form-group">--}}

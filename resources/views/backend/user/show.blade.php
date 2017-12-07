@@ -12,9 +12,9 @@
         <div class="overlay overlay-shade-top stick-top-left height-3"></div>
         <div class="row margin-bottom-xxl">
             <div class="col-md-3 col-xs-5">
-                <div class="row text-center">
-                    <img class="img-circle border-white border-xl auto-width preview" src="{{ user_avatar(140)  }}" alt="user_avatar" style="width: 140px;"/>
-                </div>
+                {{--<div class="row text-center">--}}
+                    {{--<img class="img-circle border-white border-xl auto-width preview" src="{{ user_avatar(140)  }}" alt="user_avatar" style="width: 140px;"/>--}}
+                {{--</div>--}}
             </div>
             <div class="col-md-9 col-xs-7">
                 <div class="width-4 text-center pull-right">
@@ -38,7 +38,7 @@
                                     <small>Personal info</small>
                                 </header>
                                 <div class="tools">
-                                    <a href="{{ route('user.edit', $user->username) }}" class="btn btn-primary">Edit</a>
+                                    <a href="{{ route('user.edit', $user->slug) }}" class="btn btn-primary">Edit</a>
                                 </div>
                             </div>
                             <div class="card-body">

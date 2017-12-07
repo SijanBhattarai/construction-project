@@ -20,7 +20,7 @@ class TransactionController extends Controller
     {
         $transaction = Transaction::create($request->Data());
 
-        return back()->withSuccess(trans('messages.create_success', [ 'entity' => 'Transaction' ]))->with('collapse_in', $transaction->id);
+        return redirect()->Route('transaction.index')->withSuccess(trans('messages.create_success', [ 'entity' => 'Transaction' ]))->with('collapse_in', $transaction->id);
     }
 
     public function create()

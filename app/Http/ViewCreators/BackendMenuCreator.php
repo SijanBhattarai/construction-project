@@ -41,6 +41,14 @@ class BackendMenuCreator
             'icon' => 'md md-list',
             'title' => 'Site'
         ]);
+        
+        array_push($menu, [
+            'class' => false,
+            'route' => route('accounthead.index'),
+            'icon' => 'md md-list',
+            'title' => 'AccountHead'
+        ]);
+
 
         array_push($menu, [
             'class' => false,
@@ -51,22 +59,16 @@ class BackendMenuCreator
 
         array_push($menu, [
             'class' => false,
-            'route' => route('report.index'),
-            'icon' => 'md md-list',
-            'title' => 'Reports'
+            'route' => route('user.index'),
+            'icon'  => 'md md-accessibility',
+            'title' => 'Users'
         ]);
 
         array_push($menu, [
             'class' => false,
-            'route' => route('accounthead.index'),
+            'route' => route('report.index'),
             'icon' => 'md md-list',
-            'title' => 'AccountHead'
-        ]);
-        array_push($menu, [
-            'class' => false,
-            'route' => route('user.index'),
-            'icon'  => 'md md-accessibility',
-            'title' => 'Users'
+            'title' => 'Reports'
         ]);
 
 

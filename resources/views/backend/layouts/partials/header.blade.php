@@ -26,7 +26,7 @@
                     </a>
                     <ul class="dropdown-menu animation-dock">
                         <li>
-                            <a href="{{ route('user.show', auth()->user()->username) }}">
+                            <a href="{{ route('user.show', auth()->user()->slug) }}">
                                 <i class="md md-account-circle"></i>
                                 My profile
                             </a>

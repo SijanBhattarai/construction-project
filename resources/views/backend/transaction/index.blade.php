@@ -7,7 +7,7 @@
         <div class="section-body">
             <div class="card">
                 <div class="card-head">
-                    <header class="text-capitalize">all transactions</header>
+                    <header class="text-capitalize">All transactions</header>
                     <div class="tools">
                         <a class="btn btn-primary ink-reaction" href="{{ route('transaction.create') }}">
                             <i class="md md-add"></i>
@@ -33,7 +33,7 @@
                                 <td>{{ str_limit($transaction->name, 47) }}</td>
                                 <td>{{ str_limit($transaction->site,47) }}</td>
                                 <td>{{ str_limit($transaction->accounthead, 47) }}</td>
-                                <td>{{ str_limit($transaction->amount, 47) }}</td
+                                <td>{{ str_limit($transaction->amount, 47) }}</td>
 
                                 {{--<td class="text-right">--}}
                                     {{--<a href="{{route('transaction.edit', $transaction->name)}}" class="btn btn-flat btn-primary btn-xs">--}}
@@ -46,7 +46,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="4" class="text-center">No Sites available.</td>
+                                <td colspan="4" class="text-center">No Transactions available.</td>
                             </tr>
                         @endforelse
                         </tbody>
