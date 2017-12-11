@@ -14,12 +14,10 @@ class CreateAccountHeadsTable extends Migration
     public function up()
     {
         Schema::create('account_heads', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->timestamps();
             $table->string('accountname');
             $table->string('slug', 100)->unique();
-
+            $table->timestamps();
         });
     }
 
