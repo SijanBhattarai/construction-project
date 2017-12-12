@@ -66,7 +66,7 @@
             <small class="no-linebreak hidden-folded">
                 <span class="opacity-75">Copyright &#183; {{ date('Y') }} &#183;</span>
                 <strong>
-                    <a href="{{ url('/') }}"> {{ config('app.name') }}</a>
+                    <a href="{{ url('/') }}"> SNS</a>
                 </strong>
             </small>
         </div>

@@ -13,6 +13,7 @@
                             <i class="md md-add"></i>
                             Add
                         </a>
+                        </a>
                     </div>
                 </div>
                 <div class="card-body">

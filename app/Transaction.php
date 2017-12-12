@@ -12,8 +12,6 @@ class Transaction extends Model
         'site',
         'amount',
         'slug',
-        'view'
-
     ];
     public function getRouteKeyName()
     {
@@ -22,6 +20,8 @@ class Transaction extends Model
     public function setNameAttribute($value)
     {
         $this->attributes['name'] = $value;
+
+
 
         if ( ! $this->exists)
         {
@@ -49,16 +49,9 @@ class Transaction extends Model
         $this->attributes['slug'] = $slug;
     }
 
-//    public function image()
-//    {
-//        return $this->morphOne(Image::class, 'imageable');
-//    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function subMenus()
-    {
-        return $this->hasMany(SubMenu::class);
-    }
+
 }

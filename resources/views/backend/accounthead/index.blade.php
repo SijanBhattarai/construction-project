@@ -14,7 +14,7 @@
 @section('content')
     <section>
         <div class="section-header text-center">
-            <h2 class="style-default-bright">Menu</h2>
+            <h2 class="style-default-bright">Account Head</h2>
         </div>
         <div class="section-body">
             <div class="row">
@@ -26,10 +26,10 @@
                             <i class="md md-add"></i>
                             Add
                         </button>
-                        <button class="btn btn-primary ink-reaction" type="submit">
-                            <i class="md md-save"></i>
-                            Save
-                        </button>
+                        {{--<button class="btn btn-primary ink-reaction" type="submit">--}}
+                            {{--<i class="md md-save"></i>--}}
+                            {{--Save--}}
+                        {{--</button>--}}
                     </article>
                 </div>
                 <div class="col-md-8 col-md-offset-2">
@@ -99,16 +99,16 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title" id="addMenuLabel">Add Menu</h4>
+                    <h4 class="modal-title" id="addMenuLabel">Add Account Head</h4>
                 </div>
 
                     <div class="form-group">
-                        {{ Form::text('accountname', old('accountname'), ['class' => 'form-control', 'placeholder' => '(same as page title)']) }}
+                        {{ Form::text('accountname', old('accountname'), ['class' => 'form-control', 'placeholder']) }}
                         <label class="accountname">Name</label>
                     </div>
                        <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add Menu</button>
+                    <button type="submit" class="btn btn-primary">Add </button>
                 </div>
             </div>
         </div>

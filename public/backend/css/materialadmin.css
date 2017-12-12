@@ -1173,6 +1173,7 @@ a.text-success:hover {
   color: #3d8b40;
 }
 #base {
+  background-image: url("../../images/bgmain.png");
   overflow: hidden;
   padding-left: 64px;
   width: 100%;
@@ -1201,6 +1202,7 @@ a.text-success:hover {
 @media (min-width: 1200px) {
   .menubar-pin #base {
     padding-left: 240px;
+    background-image: url("../../images/bg2.png");
   }
 }
 @media (min-width: 769px) {
@@ -1668,6 +1670,8 @@ body:not(.menubar-first) .menubar-fixed-panel {
   font-size: 12px;
   padding: 0;
   margin-bottom: 30px;
+
+  background-color: lightgrey;
 }
 .gui-controls small {
   display: block;
@@ -2061,6 +2065,10 @@ body:not(.menubar-first) .menubar-fixed-panel {
   .menubar-pin .gui-controls li .title {
     left: 0;
     opacity: 1;
+    font-weight: 900;
+  }
+  .menubar-pin .gui-controls li .title:hover {
+    text-transform: uppercase;
   }
   .menubar-pin .gui-folder > a:after {
     opacity: 1;

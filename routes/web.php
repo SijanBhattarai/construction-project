@@ -72,7 +72,7 @@ Route::group([ 'as' => 'transaction.', 'prefix' => 'transaction' ], function ()
     Route::get('', 'TransactionController@index')->name('index');
     Route::get('create', 'TransactionController@create')->name('create');
     Route::post('store', 'TransactionController@store')->name('store');
-    Route::get('{transaction}/edit', 'TransactionController@edit')->name('edit');
+    Route::get('edit', 'TransactionController@edit')->name('edit');
     Route::put('{transaction}', 'TransactionController@update')->name('update');
     Route::delete('{transaction}', 'TransactionController@destroy')->name('destroy');
 //    Route::post('/datatable','TransactionController@datatable')->name('datatable');

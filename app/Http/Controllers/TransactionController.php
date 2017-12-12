@@ -7,6 +7,7 @@ use App\Site;
 use App\Transaction;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTransaction;
+use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
 {
@@ -14,74 +15,29 @@ class TransactionController extends Controller
     {
         $transactions = Transaction::latest()->get([ 'name']);
         $accountheads = AccountHead::latest()->get(['accountname']);
-        return view('backend.transaction.index', compact('transactions','accountheads'));
+        $sites = SIte::latest()->get(['name']);
+        return view('backend.transaction.index', compact('transactions','accountheads','sites'));
     }
     public function store(StoreTransaction $request)
     {
-        $transaction = Transaction::create($request->Data());
+        DB::transaction(function () use ($request)
+        {
+            $data = $request->data();
 
-        return redirect()->Route('transaction.index')->withSuccess(trans('messages.create_success', [ 'entity' => 'Transaction' ]))->with('collapse_in', $transaction->id);
+            Transaction::create($data);
+
+        });
+
+        return redirect()->route('transaction.index')->withSuccess(trans('messages.create_success', [ 'entity' => 'Transaction' ]));
     }
-
     public function create()
     {
 
         $transactions = Transaction::latest()->get([ 'name']);
         $accountheads = AccountHead::latest()->get(['accountname']);
         $sites = Site::latest()->get(['name']);
-        return view('backend.transaction.create', compact('transactions','accountheads','sites'));    }
-
-    /**
-     * @param StoreTransaction $request
-     * @param Transaction $transaction
-     * @return mixed
-     */
-
-    /**
-     * @param Request $request
-     * @return mixed
-     */
-    public function update(Request $request, Transaction $transaction)
-    {
-        foreach ($request->get('order') as $order => $transactionId)
-        {
-            $transaction = Transaction::find($transactionId);
-
-            $transaction->update([ 'order' => $order ]);
-        }
-
-        if ($request->has('sub_menu_order'))
-        {
-            foreach ($request->get('sub_menu_order') as $transactionId => $subTransactionOrder)
-            {
-                foreach ($subTransactionOrder as $order => $subTransactionId)
-                {
-                    $subTransaction = SubTransaction::find($subTransactionId);
-
-                    $subTransaction->update([ 'order' => $order ]);
-                }
-            }
-        }
-
-        return back()->withSuccess(trans('messages.update_success', [ 'entity' => 'Transaction Order' ]));
+        return view('backend.transaction.create', compact('transactions','accountheads','sites'));
     }
 
-    /**
-     * @param Transaction $transaction
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function destroy(Transaction $transaction)
-    {
-        $transaction->delete();
-
-
-    }
-
-
-    /**
-     * @param Transaction $transaction
-     * @return \Illuminate\Http\JsonResponse
-     * @throws \Exception
-     */
 
 }
