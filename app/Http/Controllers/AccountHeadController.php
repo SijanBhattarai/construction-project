@@ -21,7 +21,7 @@ class AccountHeadController extends Controller
 
     public function store(StoreAccountHead $request)
     {
-            $accounthead = AccountHead::create($request->Data());
+        $accounthead = AccountHead::create($request->Data());
 
         return back()->withSuccess(trans('messages.create_success', [ 'entity' => 'AccountHead' ]))->with('collapse_in', $accounthead->id);
 
@@ -61,7 +61,7 @@ class AccountHeadController extends Controller
         return back()->withSuccess(trans('message.delete_success', [ 'entity' => 'AccountHead' ]));
 
     }
-       public function shows(AccountHead $accounthead)
+    public function shows(AccountHead $accounthead)
     {
         return view($accounthead->view, compact('accounthead'));
     }
