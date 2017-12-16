@@ -13,11 +13,10 @@ class TransactionController extends Controller
 {
     public function index()
     {
-        $transactions = Transaction::latest()->get([ 'name','accounthead','site','amount']);
-        $accountheads = AccountHead::latest()->get(['accountname']);
-        $sites = SIte::latest()->get(['name']);
-        return view('backend.transaction.index', compact('transactions','accountheads','sites'));
+        $transactions = Transaction::latest()->get();
+        return view('backend.transaction.index', compact('transactions'));
     }
+
     public function store(StoreTransaction $request)
     {
         DB::transaction(function () use ($request)
@@ -32,7 +31,6 @@ class TransactionController extends Controller
     }
     public function create()
     {
-
         $transactions = Transaction::latest()->get([ 'name']);
         $accountheads = AccountHead::latest()->get(['accountname']);
         $sites = Site::latest()->get(['name']);

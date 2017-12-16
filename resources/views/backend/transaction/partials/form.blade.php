@@ -28,7 +28,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::select('site', $sites, null, ['class' => 'form-control', 'placeholder' => 'Select a site or leave blank (#)']) }}
+                            {{ Form::select('site', $sites, null, ['class' => 'form-control', 'placeholder' => 'Select a Site']) }}
                             {{ Form::label('site','site*') }}
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::select('accounthead', $accountheads, null, ['class' => 'form-control', 'placeholder' => 'Select a accounthead or leave blank (#)']) }}
+                            {{ Form::select('accounthead', $accountheads, null, ['class' => 'form-control', 'placeholder' => 'Select a Account Head']) }}
                             {{ Form::label('accounthead','accounthead*') }}
                         </div>
                     </div>

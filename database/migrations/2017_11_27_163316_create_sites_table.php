@@ -20,7 +20,7 @@ class CreateSitesTable extends Migration
             $table->string('location');
             $table->text('description')->nullable();
             $table->string('slug', 100)->unique();
-
+            $table->integer('transation_id')->nullable()->unique();
         });
     }
 

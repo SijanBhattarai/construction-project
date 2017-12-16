@@ -15,12 +15,13 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('name');
-            $table->boolean('accounthead');
+            $table->string('accounthead');
             $table->string('site');
-            $table->string('amount');
+            $table->double('amount');
             $table->string('slug', 100)->unique();
+            $table->timestamps();
+
         });
     }
 

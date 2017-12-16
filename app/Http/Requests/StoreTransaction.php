@@ -33,34 +33,12 @@ class StoreTransaction extends FormRequest
         $inputs = [
             'name' => $this->get('name'),
             'accounthead' => $this->get('accounthead'),
-            'amount' => $this->get(('amount')),
             'site' => $this->get('site'),
+            'amount' => $this->get('amount'),
             'slug' => str_slug($this->get('name'))
         ];
 
         return $inputs;
     }
 
-//    public function menuFillData()
-//    {
-//        if ($this->get('accounthead')) {
-//            $accounthead = Page::find($this->get('accounthead'));
-//            $route = route('page.show', $accounthead->slug);
-//        } elseif (!empty($this->custom_url)) {
-//            $route = $this->custom_url;
-//        } else {
-//            $title = "Title Page";
-//            $route = "javascript:void(0);";
-//        }
-//
-//        $inputs = [
-//            'name' => $this->get('name'),
-//            'accounthead' => $this->get('accounthead'),
-//            'amount' => $this->get(('amount')),
-//            'site' => $this->get('site'),
-//            'slug' => str_slug($this->get('name'))
-//        ];
-//
-//        return $inputs;
-//    }
 }

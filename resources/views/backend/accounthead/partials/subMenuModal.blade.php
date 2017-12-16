@@ -9,22 +9,15 @@
                 <h4 class="modal-title" id="addSubMenuLabel">Add Account Head ({{ $accounthead->accountname }})</h4>
             </div>
             <div class="modal-body">
-                {{--<div class="form-group">--}}
-                    {{--{{ Form::select('page', $pages, null, ['class' => 'form-control', 'placeholder' => 'Select a page or leave blank (#)']) }}--}}
-                    {{--<label class="page">Page</label>--}}
-                {{--</div>--}}
+
                 <div class="form-group">
                     {{ Form::text('accountname', old('accountname'), ['class' => 'form-control', 'placeholder' => '(Enter the Account Head)']) }}
                     <label class="accountname">Name</label>
                 </div>
-                {{--<div class="form-group">--}}
-                    {{--{{ Form::text('custom_url', old('custom_url'), ['class' => 'form-control', 'placeholder' => '(enter your custom URL here..)']) }}--}}
-                    {{--<label class="accountname">Custom URL</label>--}}
-                {{--</div>--}}
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                {{--<button type="submit" class="btn btn-primary">Add Sub Menu</button>--}}
             </div>
         </div>
     </div>
