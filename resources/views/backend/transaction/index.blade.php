@@ -18,6 +18,7 @@
                         <thead>
                         <tr>
                             <th width="5%">#</th>
+                            <th width="5%">Date</th>
                             <th width="15%">Name</th>
                             <th width="30%">Account Head</th>
                             <th width="30%">Site</th>
@@ -28,6 +29,7 @@
                         @forelse($transactions as $key => $transaction)
                             <tr>
                                 <td>{{++$key}}</td>
+                                <td>{{$transaction->updated_at->format('M d Y')}}</td>
                                 <td>{{str_limit($transaction->name, 47) }}</td>
                                 <td>{{str_limit($transaction->accounthead->accountname,47)}}</td>
                                 <td>{{str_limit($transaction->site->Name,47)}}</td>
