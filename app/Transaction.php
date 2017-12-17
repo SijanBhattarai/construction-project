@@ -8,8 +8,8 @@ class Transaction extends Model
 {
     protected $fillable = [
         'name',
-        'accounthead',
-        'site',
+        'accounthead_id',
+        'site_id',
         'amount',
         'slug',
     ];
@@ -22,12 +22,12 @@ class Transaction extends Model
 
     public function site()
     {
-        return $this->hasOne('App\Site','name');
+        return $this->belongsTo('App\Site','id');
     }
 
     public function accounthead()
     {
-        return $this->hasOne('App\AccountHead','accountname');
+        return $this->belongsTo('App\AccountHead','id');
     }
 
 

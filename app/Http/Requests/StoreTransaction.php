@@ -32,8 +32,8 @@ class StoreTransaction extends FormRequest
     {
         $inputs = [
             'name' => $this->get('name'),
-            'accounthead' => $this->get('accounthead'),
-            'site' => $this->get('site'),
+            'accounthead_id' => $this->get('accounthead'),
+            'site_id' => $this->get('site'),
             'amount' => $this->get('amount'),
             'slug' => str_slug($this->get('name'))
         ];

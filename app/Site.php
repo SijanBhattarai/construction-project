@@ -32,5 +32,8 @@ class Site extends Model
         return parent::delete($options);
     }
 
-
+    public function transactions()
+    {
+        return $this->hasMany('App\Transaction','site_id');
+    }
 }

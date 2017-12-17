@@ -30,7 +30,7 @@
                                 <td>{{++$key}}</td>
                                 <td>{{str_limit($transaction->name, 47) }}</td>
                                 <td>{{str_limit($transaction->accounthead->accountname,47)}}</td>
-                                <td>{{str_limit($transaction->site->name,47)}}</td>
+                                <td>{{str_limit($transaction->site->Name,47)}}</td>
                                 <td>{{str_limit($transaction->amount,47)}}</td>
                             </tr>
                         @empty

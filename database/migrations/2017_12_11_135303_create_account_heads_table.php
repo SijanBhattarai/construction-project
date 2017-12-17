@@ -17,7 +17,7 @@ class CreateAccountHeadsTable extends Migration
             $table->increments('id');
             $table->string('accountname');
             $table->string('slug', 100)->unique();
-            $table->integer('transation_id')->nullable()->unique();
+//            $table->integer('transation_id')->nullable()->unique();
             $table->timestamps();
         });
     }

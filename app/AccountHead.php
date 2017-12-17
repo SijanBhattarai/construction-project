@@ -10,4 +10,9 @@ class AccountHead extends Model
         'slug',
         'accountname'
         ];
+
+    public function transactions()
+    {
+        return $this->hasMany('App\Transaction','accounthead_id');
+    }
 }
