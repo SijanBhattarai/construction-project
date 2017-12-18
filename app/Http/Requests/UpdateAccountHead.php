@@ -27,4 +27,15 @@ class UpdateAccountHead extends FormRequest
             //
         ];
     }
+
+    public function data()
+    {
+        $data = [
+            'accountname'              => $this->get('accountname'),
+            'rate'       => $this->get('rate'),
+        ];
+
+        return $data;
+
+    }
 }

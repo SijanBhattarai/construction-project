@@ -76,13 +76,12 @@ class SiteController extends Controller
     {
         DB::transaction(function () use ($request, $site)
         {
-            $data = $request->data();
+            $site->update($request->data($site));
 
-            $site->update($data);
 
         });
 
-        return back()->withSuccess(trans('messages.update_success', [ 'entity' => 'Site' ]));
+        return redirect()->route('site.index')->withSuccess('Site has been updated');
     }
 
     /**

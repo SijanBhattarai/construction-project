@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'AdminController@index')->name('admin');
 
 Route::group( ['prefix' => 'user', 'as' => 'user.' ], function ()
 {
@@ -38,7 +39,7 @@ Route::get('account', 'AccountController@index')->name('account.index');
 Route::get('reports', 'ReportsController@index')->name('report.index');
 
 
-Route::group([ 'as' => 'site.', 'prefix' => 'post' ], function ()
+Route::group([ 'as' => 'site.', 'prefix' => 'site' ], function ()
 
 {
     Route::get('', 'SiteController@index')->name('index');
@@ -49,17 +50,21 @@ Route::group([ 'as' => 'site.', 'prefix' => 'post' ], function ()
     Route::delete('{site}', 'SiteController@destroy')->name('destroy');
 //    Route::post('/datatable','SiteController@datatable')->name('datatable');
 });
-Route::group([ 'as' => 'accounthead.', 'prefix' => 'accounthead' ], function () {
-    Route::get('', 'AccountHeadController@index')->name('index');
-    Route::post('', 'AccountHeadController@store')->name('store');
-    Route::put('', 'AccountHeadController@update')->name('update');
-    Route::delete('{accounthead}', 'AccountHeadController@destroy')->name('destroy');
 
-//    Route::group(['as' => 'subMenu.'], function () {
-//        Route::post('{accounthead}/sub-accounthead', 'AccountHead@storeSubMenu')->name('store');
-//        Route::delete('{accounthead}/sub-accounthead/{subMenu}', 'AccountHead@destroySubMenu')->name('destroy');
-//    });
+
+Route::group([ 'as' => 'accounthead.', 'prefix' => 'accounthead' ], function ()
+{
+    Route::get('', 'AccountheadController@index')->name('index');
+    Route::get('create', 'AccountheadController@create')->name('create');
+    Route::post('store', 'AccountheadController@store')->name('store');
+    Route::get('{accounthead}/edit', 'AccountheadController@edit')->name('edit');
+    Route::put('{accounthead}', 'AccountheadController@update')->name('update');
+    Route::delete('{accounthead}', 'AccountheadController@destroy')->name('destroy');
+
+
 });
+
+
 //logout loigin route
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
@@ -76,4 +81,14 @@ Route::group([ 'as' => 'transaction.', 'prefix' => 'transaction' ], function ()
     Route::put('{transaction}', 'TransactionController@update')->name('update');
     Route::delete('{transaction}', 'TransactionController@destroy')->name('destroy');
 //    Route::post('/datatable','TransactionController@datatable')->name('datatable');
+});
+//admin route
+
+
+Auth::routes();
+Route::get('/home', 'HomeController@index');
+Route::prefix('admin')->group(function() {
+    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/', 'AdminController@index')->name('admin.dashboard');
 });

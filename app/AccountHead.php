@@ -8,8 +8,13 @@ class AccountHead extends Model
 {
     protected $fillable = [
         'slug',
-        'accountname'
+        'accountname',
+        'rate'
         ];
+    public function getRouteKeyName()
+    {
+        return 'accountname';
+    }
 
     public function transactions()
     {

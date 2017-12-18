@@ -1,10 +1,8 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
-class CreateAccountHeadsTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +11,16 @@ class CreateAccountHeadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('account_heads', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('accountname');
-            $table->integer('rate');
-            $table->string('slug', 100)->unique();
-//            $table->integer('transation_id')->nullable()->unique();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('job_title');
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -30,6 +28,6 @@ class CreateAccountHeadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('account_heads');
+        Schema::dropIfExists('admins');
     }
 }

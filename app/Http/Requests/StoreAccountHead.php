@@ -28,13 +28,14 @@ class StoreAccountHead extends FormRequest
         ];
     }
 
-    public function Data()
+    public function data()
     {
-        $inputs = [
+        $data = [
             'accountname'    => $this->get('accountname'),
-            'slug'           => str_slug($this->get('accountname'))
+            'slug'           => str_slug($this->get('accountname')),
+            'rate'=>$this->get('rate')
         ];
 
-        return $inputs;
+        return $data;
     }
 }
