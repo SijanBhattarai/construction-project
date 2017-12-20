@@ -27,4 +27,16 @@ class UpdateAccountHead extends FormRequest
             //
         ];
     }
+
+    public function data()
+    {
+        $data = [
+            'accountname'              => $this->get('accountname'),
+            'slug'           => str_slug($this->get('accountname'))
+
+        ];
+
+        return $data;
+
+    }
 }

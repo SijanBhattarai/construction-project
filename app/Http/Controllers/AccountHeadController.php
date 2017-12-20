@@ -3,74 +3,89 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+
 use App\AccountHead;
 use App\Http\Requests\StoreAccountHead;
+use App\Http\Requests\UpdateAccountHead;
 
 class AccountHeadController extends Controller
 {
     public function index()
     {
-        $accountheads = AccountHead::latest()->get([ 'slug','accountname']);
+        $accountheads = AccountHead::latest()->get(['slug', 'accountname']);
 
         return view('backend.accounthead.index', compact('accountheads'));
     }
     public function create()
     {
-        return view('backend.page.create');
+
+        return view('backend.accounthead.create');
     }
-
-    public function store(StoreAccountHead $request)
-    {
-        $accounthead = AccountHead::create($request->Data());
-
-        return back()->withSuccess(trans('messages.create_success', [ 'entity' => 'AccountHead' ]))->with('collapse_in', $accounthead->id);
-
-    }
-
 
     /**
      * @param StoreAccountHead $request
-     * @param AccountHead $accounthead
      * @return mixed
      */
-
-    /**
-     * @param Request $request
-     * @return mixed
-     */
-    public function update(Request $request, AccountHead $accounthead)
+    public function store(StoreAccountHead $request)
     {
-        foreach ($request->get('order') as $order => $accountheadId)
+        DB::transaction(function () use ($request)
         {
-            $accounthead = AccountHead::find($accountheadId);
+            $data = $request->data();
 
-            $accounthead->update([ 'order' => $order ]);
-        }
+            Accounthead::create($data);
 
+        });
 
-        return back()->withSuccess(trans('messages.update_success', [ 'entity' => 'AccountHead Order' ]));
+        return redirect()->route('accounthead.index')->withSuccess(trans('messages.create_success', [ 'entity' => 'Accounthead' ]));
     }
 
     /**
-     * @param AccountHead $accounthead
-     * @return \Illuminate\Http\JsonResponse
+     * @param Post $post
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function destroy(AccountHead $accounthead)
-    {
-        $accounthead->delete();
-        return back()->withSuccess(trans('message.delete_success', [ 'entity' => 'AccountHead' ]));
-
-    }
-    public function shows(AccountHead $accounthead)
+    public function show(AccountHead $accounthead)
     {
         return view($accounthead->view, compact('accounthead'));
     }
 
+    /**
+     * @param Accounthead $post
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit(AccountHead $accounthead)
+    {
+
+
+        return view('backend.accounthead.edit',compact('accounthead'));
+    }
 
     /**
-     * @param AccountHead $accounthead
-     * @return \Illuminate\Http\JsonResponse
-     * @throws \Exception
+     * @param UpdateAccounthead $request
+     * @param Accounthead $accounthead
+     * @return mixed
      */
+    public function update(UpdateAccountHead $request, AccountHead $accounthead)
+    {
+        DB::transaction(function () use ($request, $accounthead)
+        {
+            $accounthead->update($request->data($accounthead));
 
+
+        });
+
+        return redirect()->route('accounthead.index')->withSuccess('Accounthead has been updated');
+    }
+
+    /**
+     * @param Post $post
+     * @return mixed
+     */
+    public function destroy(AccountHead $accounthead)
+    {
+
+        $accounthead->delete();
+
+        return back()->withSuccess(trans('message.delete_success', [ 'entity' => 'Accounthead' ]));
+    }
 }
