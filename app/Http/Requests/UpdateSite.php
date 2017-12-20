@@ -34,6 +34,8 @@ class UpdateSite extends FormRequest
             'name'              => $this->get('name'),
             'location'          => $this->get('location', null),
             'description'       => $this->get('description'),
+            'slug'              => str_slug($this->get('name')),
+
         ];
 
         return $data;

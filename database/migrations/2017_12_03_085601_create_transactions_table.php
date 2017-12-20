@@ -19,9 +19,11 @@ class CreateTransactionsTable extends Migration
             $table->string('accounthead_id');
             $table->string('site_id');
             $table->double('amount');
+            $table->double('cheque_no')->nullable();
+            $table->date('cheque_date')->nullable();
+            $table->double('of_no')->nullable();
             $table->string('slug', 100)->unique();
             $table->timestamps();
-
         });
     }
 

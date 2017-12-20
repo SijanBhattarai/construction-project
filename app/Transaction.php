@@ -11,6 +11,9 @@ class Transaction extends Model
         'accounthead_id',
         'site_id',
         'amount',
+        'cheque_no',
+        'cheque_date',
+        'of_no',
         'slug',
     ];
 
@@ -22,12 +25,11 @@ class Transaction extends Model
 
     public function site()
     {
-        return $this->belongsTo('App\Site','id');
-    }
+        return $this->belongsTo('App\Site', 'site_id', 'id');    }
 
     public function accounthead()
     {
-        return $this->belongsTo('App\AccountHead','id');
+        return $this->belongsTo('App\AccountHead', 'accounthead_id', 'id');
     }
 
 

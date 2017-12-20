@@ -20,9 +20,12 @@
                             <th width="5%">#</th>
                             <th width="5%">Date</th>
                             <th width="15%">Name</th>
-                            <th width="30%">Account Head</th>
-                            <th width="30%">Site</th>
-                            <th width="20%">Amount</th>
+                            <th width="20%">Account Head</th>
+                            <th width="20%">Site</th>
+                            <th width="10%">Amount</th>
+                            <th width="10%">Cheque No</th>
+                            <th width="10%">Cheque Date</th>
+                            <th width="10%">OF No</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -34,6 +37,9 @@
                                 <td>{{str_limit($transaction->accounthead->accountname,47)}}</td>
                                 <td>{{str_limit($transaction->site->Name,47)}}</td>
                                 <td>{{str_limit($transaction->amount,47)}}</td>
+                                <td>{{str_limit($transaction->cheque_no,47)}}</td>
+                                <td>{{str_limit($transaction->cheque_date,47)}}</td>
+                                <td>{{str_limit($transaction->of_no,47)}}</td>
                             </tr>
                         @empty
                             <tr>

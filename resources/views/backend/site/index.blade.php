@@ -27,7 +27,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @forelse($sites as $key => $site)
+                        @forelse($sites as $key => $site)
                             <tr>
                                 <td>{{++$key}}</td>
                                 <td>{{ str_limit($site->name, 47) }}</td>
@@ -42,11 +42,11 @@
                                     </button>
                                 </td>
                             </tr>
-                            @empty
-                                <tr>
-                                    <td colspan="4" class="text-center">No Sites available.</td>
-                                </tr>
-                            @endforelse
+                        @empty
+                            <tr>
+                                <td colspan="4" class="text-center">No Sites available.</td>
+                            </tr>
+                        @endforelse
                         </tbody>
                     </table>
                 </div>

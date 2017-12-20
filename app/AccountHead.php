@@ -11,6 +11,11 @@ class AccountHead extends Model
         'accountname'
         ];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function transactions()
     {
         return $this->hasMany('App\Transaction','accounthead_id');

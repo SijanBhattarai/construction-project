@@ -35,6 +35,9 @@ class StoreTransaction extends FormRequest
             'accounthead_id' => $this->get('accounthead'),
             'site_id' => $this->get('site'),
             'amount' => $this->get('amount'),
+            'cheque_no' =>$this->get('cheque_no'),
+            'cheque_date' => $this->get('cheque_date'),
+            'of_no' => $this->get('of_no'),
             'slug' => str_slug($this->get('name'))
         ];
 

@@ -1,4 +1,5 @@
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.js"></script>
+<script src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
 <div class="row">
     <div class="col-md-12">
         @include('partials.errors')
@@ -45,8 +46,51 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::text('amount',old('amount'),['required', 'id' => 'my-editor']) }}
+                            {{ Form::number('amount',old('amount'),['required', 'id' => 'my-editor']) }}
                             {{ Form::label('amount','amount*') }}
+                        </div>
+                    </div>
+                </div>
+                <div id="radio">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                {{--<p>Payment Mode</p>--}}
+                                <select v-model="selected">
+                                    <option disabled value="">Please select Payment mode</option>
+                                    <option>Cash</option>
+                                    <option>Cheque</option>
+                                    <option>Credit</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="selected=='Cheque'">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{ Form::number('cheque_no',old('cheque_no'),['required', 'id' => 'my-editor']) }}
+                                    {{ Form::label('cheque_no','cheque_no*') }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{ Form::Date('cheque_date',old('cheque_date'),['required', 'id' => 'my-editor']) }}
+                                    {{ Form::label('cheque_date','cheque_date*') }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="selected=='Credit'">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{ Form::number('of_no',old('of_no'),['required', 'id' => 'my-editor']) }}
+                                    {{ Form::label('of_no','of_no*') }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -79,17 +123,19 @@
 @endpush
 
 @push('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.js"></script>
+    <script src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
     <script src="{{ asset('backend/js/libs/jquery-validation/dist/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('backend/js/libs/jquery-validation/dist/additional-methods.min.js') }}"></script>
-    <script src="{{ asset('backend/js/libs/dropify/dropify.min.js') }}"></script>
     <script src="{{ asset('/backend/js/bootstrap-select.js') }}"></script>
-    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('my-editor', {
-            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
-            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
-        });
-    </script>
+
+<script>
+new Vue({
+    el: '#radio',
+
+    data:{
+        selected:''
+    }
+})
+</script>
 @endpush

@@ -13,7 +13,8 @@ class TransactionController extends Controller
 {
     public function index()
     {
-        $transactions = Transaction::latest()->get();
+        $transactions = Transaction::orderBy('id', 'desc')->get();
+//        $transactions = DB::table('transactions')->get();
         return view('backend.transaction.index', compact('transactions'));
     }
 
@@ -32,8 +33,8 @@ class TransactionController extends Controller
     public function create()
     {
         $transactions = Transaction::latest()->get([ 'name']);
-        $accountheads = AccountHead::latest()->get(['accountname']);
-        $sites = Site::latest()->get(['name']);
+        $accountheads = AccountHead::latest()->pluck('accountname','id')->toArray();
+        $sites=Site::latest()->pluck('name', 'id')->toArray();
         return view('backend.transaction.create', compact('transactions','accountheads','sites'));
     }
 

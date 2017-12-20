@@ -38,7 +38,7 @@ Route::get('account', 'AccountController@index')->name('account.index');
 Route::get('reports', 'ReportsController@index')->name('report.index');
 
 
-Route::group([ 'as' => 'site.', 'prefix' => 'post' ], function ()
+Route::group([ 'as' => 'site.', 'prefix' => 'site' ], function ()
 
 {
     Route::get('', 'SiteController@index')->name('index');
@@ -46,34 +46,30 @@ Route::group([ 'as' => 'site.', 'prefix' => 'post' ], function ()
     Route::post('store', 'SiteController@store')->name('store');
     Route::get('{site}/edit', 'SiteController@edit')->name('edit');
     Route::put('{site}', 'SiteController@update')->name('update');
-    Route::delete('{site}', 'SiteController@destroy')->name('destroy');
-//    Route::post('/datatable','SiteController@datatable')->name('datatable');
+    Route::delete('{site}', 'SiteController@delete')->name('destroy');
 });
-Route::group([ 'as' => 'accounthead.', 'prefix' => 'accounthead' ], function () {
+
+Route::group([ 'as' => 'accounthead.', 'prefix' => 'accounthead' ], function ()
+
+{
     Route::get('', 'AccountHeadController@index')->name('index');
     Route::post('', 'AccountHeadController@store')->name('store');
     Route::put('', 'AccountHeadController@update')->name('update');
     Route::delete('{accounthead}', 'AccountHeadController@destroy')->name('destroy');
-
-//    Route::group(['as' => 'subMenu.'], function () {
-//        Route::post('{accounthead}/sub-accounthead', 'AccountHead@storeSubMenu')->name('store');
-//        Route::delete('{accounthead}/sub-accounthead/{subMenu}', 'AccountHead@destroySubMenu')->name('destroy');
-//    });
 });
-//logout loigin route
+
+//logout login route
+
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
 
 //transaction route
+
 Route::group([ 'as' => 'transaction.', 'prefix' => 'transaction' ], function ()
 
 {
     Route::get('', 'TransactionController@index')->name('index');
     Route::get('create', 'TransactionController@create')->name('create');
     Route::post('store', 'TransactionController@store')->name('store');
-    Route::get('edit', 'TransactionController@edit')->name('edit');
-    Route::put('{transaction}', 'TransactionController@update')->name('update');
-    Route::delete('{transaction}', 'TransactionController@destroy')->name('destroy');
-//    Route::post('/datatable','TransactionController@datatable')->name('datatable');
 });
