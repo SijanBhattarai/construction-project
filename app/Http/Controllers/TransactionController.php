@@ -32,10 +32,10 @@ class TransactionController extends Controller
     }
     public function create()
     {
-        $transactions = Transaction::latest()->get([ 'name']);
+//        $transactions = Transaction::latest()->get([ 'name']);
         $accountheads = AccountHead::latest()->pluck('accountname','id')->toArray();
         $sites=Site::latest()->pluck('name', 'id')->toArray();
-        return view('backend.transaction.create', compact('transactions','accountheads','sites'));
+        return view('backend.transaction.create', compact('accountheads','sites'));
     }
 
 

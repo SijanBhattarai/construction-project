@@ -56,6 +56,12 @@ class BackendMenuCreator
             'icon' => 'md md-web',
             'title' => 'Transaction'
         ]);
+        array_push($menu, [
+            'class' => false,
+            'route' => route('sales.index'),
+            'icon' => 'md md-list',
+            'title' => 'Sales'
+        ]);
 
         array_push($menu, [
             'class' => false,

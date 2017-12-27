@@ -36,4 +36,8 @@ class Site extends Model
     {
         return $this->hasMany('App\Transaction','site_id');
     }
+    public function sales()
+    {
+        return $this->hasMany('App\Sales','site_id');
+    }
 }

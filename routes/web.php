@@ -76,3 +76,13 @@ Route::group([ 'as' => 'transaction.', 'prefix' => 'transaction' ], function ()
     Route::get('create', 'TransactionController@create')->name('create');
     Route::post('store', 'TransactionController@store')->name('store');
 });
+
+Route::group([ 'as' => 'sales.', 'prefix' => 'sales' ], function ()
+
+{
+    Route::get('', 'SalesController@index')->name('index');
+    Route::get('create', 'SalesController@create')->name('create');
+    Route::post('store', 'SalesController@store')->name('store');
+    Route::get('{sales}/edit', 'SalesController@edit')->name('edit');
+    Route::put('{sales}', 'SalesController@update')->name('update');
+});
