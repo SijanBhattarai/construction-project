@@ -5,7 +5,7 @@
         <div class="section-body">
             <div class="card">
                 <div class="card-head">
-                    <header class="text-capitalize">All Transactions</header>
+                    <header class="text-capitalize">All Sales Details</header>
                     <div class="tools">
                         <a class="btn btn-primary ink-reaction" href="{{ route('sales.create') }}">
                             <i class="md md-add"></i>

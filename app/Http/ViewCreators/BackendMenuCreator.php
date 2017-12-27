@@ -60,7 +60,7 @@ class BackendMenuCreator
             'class' => false,
             'route' => route('sales.index'),
             'icon' => 'md md-list',
-            'title' => 'Sales'
+            'title' => 'Sales Details'
         ]);
 
         array_push($menu, [

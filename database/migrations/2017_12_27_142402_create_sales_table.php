@@ -18,9 +18,9 @@ class CreateSalesTable extends Migration
             $table->string('heading');
             $table->string('slug');
             $table->integer('site_id');
-            $table->integer('total_payable');
-            $table->integer('tds_percent');
-            $table->integer('mobilization');
+            $table->double('total_payable');
+            $table->float('tds_percent');
+            $table->float('mobilization');
             $table->timestamps();
         });
     }
