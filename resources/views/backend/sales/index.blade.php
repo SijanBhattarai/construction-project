@@ -46,7 +46,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="4" class="text-center">No Transactions available.</td>
+                                <td colspan="4" class="text-center">No Sales Details available.</td>
                             </tr>
                         @endforelse
                         </tbody>
