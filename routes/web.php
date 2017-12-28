@@ -49,6 +49,16 @@ Route::group([ 'as' => 'site.', 'prefix' => 'site' ], function ()
     Route::put('{site}', 'SiteController@update')->name('update');
     Route::delete('{site}', 'SiteController@delete')->name('destroy');
 });
+Route::group([ 'as' => 'customer.', 'prefix' => 'customer' ], function ()
+
+{
+    Route::get('', 'CustomerController@index')->name('index');
+    Route::get('create', 'CustomerController@create')->name('create');
+    Route::post('store', 'CustomerController@store')->name('store');
+    Route::get('{customer}/edit', 'CustomerController@edit')->name('edit');
+    Route::put('{customer}','CustomerController@update')->name('update');
+    Route::delete('{customer}', 'CustomerController@delete')->name('destroy');
+});
 
 Route::group([ 'as' => 'accounthead.', 'prefix' => 'accounthead' ], function ()
 

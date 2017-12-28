@@ -37,6 +37,12 @@ class BackendMenuCreator
         ];
         array_push($menu, [
             'class' => false,
+            'route' => route('customer.index'),
+            'icon' => 'md md-list',
+            'title' => 'Customer'
+        ]);
+        array_push($menu, [
+            'class' => false,
             'route' => route('site.index'),
             'icon' => 'md md-list',
             'title' => 'Site'
