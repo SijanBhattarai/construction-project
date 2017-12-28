@@ -15,13 +15,14 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('heading');
             $table->string('accounthead_id');
             $table->string('site_id');
-            $table->double('amount');
+            $table->double('quantity');
+            $table->double('rate');
             $table->double('cheque_no')->nullable();
             $table->date('cheque_date')->nullable();
-            $table->double('of_no')->nullable();
+            $table->double('os_no')->nullable();
             $table->string('slug', 100)->unique();
             $table->timestamps();
         });

@@ -19,9 +19,11 @@
                         <tr>
                             <th width="5%">#</th>
                             <th width="5%">Date</th>
-                            <th width="15%">Name</th>
-                            <th width="20%">Account Head</th>
-                            <th width="20%">Site</th>
+                            <th width="10%">Name</th>
+                            <th width="10%">Account Head</th>
+                            <th width="10%">Site</th>
+                            <th width="10%">Quantity</th>
+                            <th width="10%">Rate</th>
                             <th width="10%">Amount</th>
                             <th width="10%">Cheque No</th>
                             <th width="10%">Cheque Date</th>
@@ -36,6 +38,8 @@
                                 <td>{{str_limit($transaction->name, 47) }}</td>
                                 <td>{{str_limit($transaction->accounthead->accountname,47)}}</td>
                                 <td>{{str_limit($transaction->site->Name,47)}}</td>
+                                <td>{{str_limit($transaction->quantity,47)}}</td>
+                                <td>{{str_limit($transaction->rate,47)}}</td>
                                 <td>{{str_limit($transaction->amount,47)}}</td>
                                 <td>{{str_limit($transaction->cheque_no,47)}}</td>
                                 <td>{{str_limit($transaction->cheque_date,47)}}</td>
