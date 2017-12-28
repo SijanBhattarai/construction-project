@@ -21,8 +21,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::text('name',old('name'),['class'=>'form-control', 'required']) }}
-                            {{ Form::label('name','name*') }}
+                            {{ Form::text('heading',old('heading'),['class'=>'form-control', 'required']) }}
+                            {{ Form::label('heading','heading*') }}
                         </div>
                     </div>
                 </div>
@@ -46,8 +46,16 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::number('amount',old('amount'),['required', 'id' => 'my-editor']) }}
-                            {{ Form::label('amount','amount*') }}
+                            {{ Form::number('quantity',old('quantity'),['required', 'id' => 'my-editor']) }}
+                            {{ Form::label('quantity','quantity*') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            {{ Form::number('rate',old('rate'),['required', 'id' => 'my-editor']) }}
+                            {{ Form::label('rate','rate*') }}
                         </div>
                     </div>
                 </div>
@@ -87,8 +95,8 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    {{ Form::number('of_no',old('of_no'),['required', 'id' => 'my-editor']) }}
-                                    {{ Form::label('of_no','of_no*') }}
+                                    {{ Form::number('os_no',old('os_no'),['required', 'id' => 'my-editor']) }}
+                                    {{ Form::label('os_no','os_no*') }}
                                 </div>
                             </div>
                         </div>

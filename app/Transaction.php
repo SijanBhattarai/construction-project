@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Transaction extends Model
 {
     protected $fillable = [
-        'name',
+        'heading',
         'accounthead_id',
         'site_id',
-        'amount',
+        'quantity',
+        'rate',
         'cheque_no',
         'cheque_date',
         'of_no',
@@ -37,4 +38,8 @@ class Transaction extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
 
+    public function getAmountAttribute()
+    {
+        return $this->quantity * $this->rate;
+    }
 }
