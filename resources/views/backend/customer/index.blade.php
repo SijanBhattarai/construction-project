@@ -21,10 +21,10 @@
                         <thead>
                         <tr>
                             <th width="5%">#</th>
-                            <th width="30%">Name</th>
-                            <th width="20%" class="text-center">Address</th>
-                            <th width="25%" class="text-right">Email</th>
-                            <th width="20%" class="text-right">Contact</th>
+                            <th width="25%">Name</th>
+                            <th width="25%">Address</th>
+                            <th width="25%">Email</th>
+                            <th width="25%">Contact</th>
                         </tr>
                         </thead>
                         <tbody>

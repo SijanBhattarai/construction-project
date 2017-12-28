@@ -35,7 +35,6 @@ class UpdateCustomer extends FormRequest
             'address'          => $this->get('address'),
             'email'       => $this->get('email'),
             'contact'       => $this->get('contact'),
-            'slug'              => str_slug($this->get('name')),
 
         ];
 

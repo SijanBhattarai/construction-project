@@ -21,9 +21,9 @@
                         <thead>
                         <tr>
                             <th width="5%">#</th>
-                            <th width="60%">Name</th>
-                            <th width="20%" class="text-center">location</th>
-                            <th width="15%" class="text-right">Description</th>
+                            <th width="25%">Name</th>
+                            <th width="25%">location</th>
+                            <th width="45%">Description</th>
                         </tr>
                         </thead>
                         <tbody>

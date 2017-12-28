@@ -12,12 +12,11 @@
                         Back
                     </a>
                     <input type="submit" name="draft" class="btn btn-info ink-reaction" value="Save Draft">
+                    <input type="submit" name="publish" class="btn btn-primary ink-reaction" value="Publish">
                 </div>
             </div>
             <div class="card-body">
-
                 <div class="row">
-
                     <div class="col-sm-12">
                         <div class="form-group">
                             {{ Form::text('name',old('name'),['class'=>'form-control', 'required']) }}
@@ -44,7 +43,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::number('contact',old('contact'),['class'=>'form-control', 'required']) }}
+                            {{ Form::text('contact',old('contact'),['class'=>'form-control', 'required']) }}
                             {{ Form::label('contact','contact*') }}
                         </div>
                     </div>
@@ -80,17 +79,17 @@
 @endpush
 
 @push('scripts')
-<script src="{{ asset('backend/js/libs/jquery-validation/dist/jquery.validate.min.js') }}"></script>
-<script src="{{ asset('backend/js/libs/jquery-validation/dist/additional-methods.min.js') }}"></script>
-<script src="{{ asset('backend/js/libs/dropify/dropify.min.js') }}"></script>
-<script src="{{ asset('/backend/js/bootstrap-select.js') }}"></script>
-<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace('my-editor', {
-        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
-        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
-    });
-</script>
+    <script src="{{ asset('backend/js/libs/jquery-validation/dist/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('backend/js/libs/jquery-validation/dist/additional-methods.min.js') }}"></script>
+    <script src="{{ asset('backend/js/libs/dropify/dropify.min.js') }}"></script>
+    <script src="{{ asset('/backend/js/bootstrap-select.js') }}"></script>
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('my-editor', {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+        });
+    </script>
 @endpush

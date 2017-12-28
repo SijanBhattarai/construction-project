@@ -19,7 +19,6 @@ class CreateCustomersTable extends Migration
             $table->string('address');
             $table->string('email');
             $table->double('contact');
-            $table->string('slug', 100)->unique();
             $table->timestamps();
         });
     }
