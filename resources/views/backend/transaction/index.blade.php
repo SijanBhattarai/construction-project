@@ -27,7 +27,7 @@
                             <th width="10%">Amount</th>
                             <th width="10%">Cheque No</th>
                             <th width="10%">Cheque Date</th>
-                            <th width="10%">OF No</th>
+                            <th width="10%">OS No</th>
                         </tr>
                         </thead>
                         <tbody>
