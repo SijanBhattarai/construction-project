@@ -20,12 +20,13 @@
                             <th width="5%">#</th>
                             <th width="10%">Date</th>
                             <th width="10%">Site</th>
-                            <th width="15%">Heading</th>
-                            <th width="20%">Total Payable</th>
-                            <th width="15%">TDS</th>
-                            <th width="15%">Mobilization</th>
-                            {{--<th width="10%">Edit</th>--}}
-
+                            <th width="10%">Taxable Sales</th>
+                            <th width="10%">TDS</th>
+                            <th width="10%">Mobilization</th>
+                            <th width="10%">Reatation</th>
+                            <th width="10%">NBK</th>
+                            <th width="10%">Tax</th>
+                            <th width="15%">Total Payable</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -34,10 +35,13 @@
                                 <td>{{++$key}}</td>
                                 <td>{{$sale->updated_at->format('M d Y')}}</td>
                                 <td>{{str_limit($sale->site->Name,47)}}</td>
-                                <td>{{str_limit($sale->heading, 47) }}</td>
-                                <td>{{str_limit($sale->total_payable, 47) }}</td>
-                                <td>{{str_limit($sale->tds_percent, 47) }}</td>
-                                <td>{{str_limit($sale->mobilization, 47) }}</td>
+                                <td>{{str_limit($sale->taxable_sales, 47) }}</td>
+                                <td>{{str_limit($sale->tds_percent, 47) }}%</td>
+                                <td>{{str_limit($sale->mobilization, 47) }}%</td>
+                                <td>{{str_limit($sale->reatation, 47) }}%</td>
+                                <td>{{str_limit($sale->nbk, 47) }}%</td>
+                                <td>{{str_limit($sale->tax, 47) }}%</td>
+                                <td>{{str_limit($sale->TotalPayable, 47) }}</td>
                                 {{--<td class="text-right">--}}
                                     {{--<a href="{{route('sales.edit', $sale->slug)}}" class="btn btn-flat btn-primary btn-xs">--}}
                                         {{--Edit--}}

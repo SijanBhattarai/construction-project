@@ -15,12 +15,13 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('heading');
-            $table->string('slug');
             $table->integer('site_id');
-            $table->double('total_payable');
-            $table->float('tds_percent');
+            $table->double('taxable_sales');
+            $table->float('tds_percent')->nullable();
+            $table->float('reatation');
             $table->float('mobilization');
+            $table->float('nbk');
+            $table->float('tax');
             $table->timestamps();
         });
     }

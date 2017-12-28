@@ -31,12 +31,13 @@ class StoreSales extends FormRequest
     public function Data()
     {
         $inputs = [
-            'heading' => $this->get('heading'),
             'site_id' => $this->get('site'),
-            'total_payable' => $this->get('total_payable'),
+            'taxable_sales' => $this->get('taxable_sales'),
             'tds_percent' =>$this->get('tds_percent'),
+            'reatation' => $this->get('reatation'),
             'mobilization' => $this->get('mobilization'),
-            'slug' => str_slug($this->get('heading'))
+            'nbk' => $this->get('nbk'),
+            'tax' => $this->get('tax'),
         ];
 
         return $inputs;

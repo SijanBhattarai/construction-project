@@ -17,13 +17,6 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="form-group">
-                            {{ Form::text('heading',old('heading'),['class'=>'form-control', 'required']) }}
-                            {{ Form::label('heading','heading*') }}
-                        </div>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
@@ -35,24 +28,24 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::number('total_payable',old('total_payable'),['required', 'id' => 'my-editor']) }}
-                            {{ Form::label('total_payable','total_payable*') }}
+                            {{ Form::number('taxable_sales',old('taxable_sales'),['required', 'id' => 'my-editor']) }}
+                            {{ Form::label('taxable_sales','taxable_sales*') }}
                         </div>
                     </div>
                 </div>
-                <div id="radio">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <select v-model="selected">
-                                    <option disabled value="">TDS?</option>
-                                    <option>Yes</option>
-                                    <option>No</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-if="selected=='Yes'">
+                {{--<div id="radio">--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col-sm-12">--}}
+                            {{--<div class="form-group">--}}
+                                {{--<select v-model="selected">--}}
+                                    {{--<option disabled value="">TDS?</option>--}}
+                                    {{--<option>Yes</option>--}}
+                                    {{--<option>No</option>--}}
+                                {{--</select>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div v-if="selected=='Yes'">--}}
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
@@ -61,8 +54,24 @@
                                 </div>
                             </div>
                         </div>
+                    {{--</div>--}}
+                {{--</div>--}}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                {{ Form::number('reatation',old('reatation'),['required', 'id' => 'my-editor']) }}
+                                {{ Form::label('reatation','reatation*') }}
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                {{ Form::number('nbk',old('nbk'),['required', 'id' => 'my-editor']) }}
+                                {{ Form::label('nbk','nbk*') }}
+                            </div>
+                        </div>
+                    </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
@@ -71,6 +80,14 @@
                         </div>
                     </div>
                 </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                {{ Form::number('tax',old('tax'),['required', 'id' => 'my-editor']) }}
+                                {{ Form::label('tax','tax*') }}
+                            </div>
+                        </div>
+                    </div>
 
             <div class="card-actionbar">
                 <div class="card-actionbar-row">
