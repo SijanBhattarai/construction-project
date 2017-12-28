@@ -19,7 +19,7 @@
                         <tr>
                             <th width="5%">#</th>
                             <th width="5%">Date</th>
-                            <th width="10%">Name</th>
+                            <th width="10%">Heading</th>
                             <th width="10%">Account Head</th>
                             <th width="10%">Site</th>
                             <th width="10%">Quantity</th>
@@ -35,7 +35,7 @@
                             <tr>
                                 <td>{{++$key}}</td>
                                 <td>{{$transaction->updated_at->format('M d Y')}}</td>
-                                <td>{{str_limit($transaction->name, 47) }}</td>
+                                <td>{{str_limit($transaction->heading, 47) }}</td>
                                 <td>{{str_limit($transaction->accounthead->accountname,47)}}</td>
                                 <td>{{str_limit($transaction->site->Name,47)}}</td>
                                 <td>{{str_limit($transaction->quantity,47)}}</td>
