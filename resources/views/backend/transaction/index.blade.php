@@ -22,9 +22,9 @@
                             <th width="10%">Heading</th>
                             <th width="10%">Account Head</th>
                             <th width="10%">Site</th>
-                            <th width="10%">Quantity</th>
+                            <th width="5%">Quantity</th>
                             <th width="10%">Rate</th>
-                            <th width="10%">Amount</th>
+                            <th width="5%">Amount</th>
                             <th width="10%">Cheque No</th>
                             <th width="10%">Cheque Date</th>
                             <th width="10%">OS No</th>

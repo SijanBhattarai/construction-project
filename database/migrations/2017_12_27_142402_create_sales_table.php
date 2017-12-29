@@ -16,6 +16,7 @@ class CreateSalesTable extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('site_id');
+            $table->integer('customer_id');
             $table->double('taxable_sales');
             $table->float('tds_percent')->nullable();
             $table->float('reatation');

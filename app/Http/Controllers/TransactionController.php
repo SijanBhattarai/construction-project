@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\AccountHead;
 use App\Site;
 use App\Transaction;
+use App\Customer;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTransaction;
 use Illuminate\Support\Facades\DB;
@@ -35,7 +36,8 @@ class TransactionController extends Controller
 //        $transactions = Transaction::latest()->get([ 'name']);
         $accountheads = AccountHead::latest()->pluck('accountname','id')->toArray();
         $sites=Site::latest()->pluck('name', 'id')->toArray();
-        return view('backend.transaction.create', compact('accountheads','sites'));
+        $customers=Customer::latest()->pluck('name', 'id')->toArray();
+        return view('backend.transaction.create', compact('accountheads','sites','customers'));
     }
 
 

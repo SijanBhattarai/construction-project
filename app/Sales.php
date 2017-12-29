@@ -8,6 +8,7 @@ class Sales extends Model
 {
     protected $fillable = [
         'site_id',
+        'customer_id',
         'taxable_sales',
         'tds_percent',
         'reatation',
@@ -23,6 +24,10 @@ class Sales extends Model
     public function site()
     {
         return $this->belongsTo('App\Site', 'site_id', 'id');
+    }
+    public function customer()
+    {
+        return $this->belongsTo('App\Customer', 'customer_id', 'id');
     }
 
     public function getTotalPayableAttribute()

@@ -32,6 +32,7 @@ class StoreSales extends FormRequest
     {
         $inputs = [
             'site_id' => $this->get('site'),
+            'customer_id' => $this->get('customer'),
             'taxable_sales' => $this->get('taxable_sales'),
             'tds_percent' =>$this->get('tds_percent'),
             'reatation' => $this->get('reatation'),

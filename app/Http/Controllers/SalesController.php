@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreSales;
 use App\Sales;
 use App\Site;
+use App\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -33,7 +34,8 @@ class SalesController extends Controller
     public function create()
     {
         $sites=Site::latest()->pluck('name', 'id')->toArray();
-        return view('backend.sales.create', compact('sites'));
+        $customers=Customer::latest()->pluck('name', 'id')->toArray();
+        return view('backend.sales.create', compact('sites','customers'));
     }
 
     public function edit(Sales $sale)

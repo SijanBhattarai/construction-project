@@ -19,6 +19,7 @@
                         <tr>
                             <th width="5%">#</th>
                             <th width="10%">Date</th>
+                            <th width="10%">Customer</th>
                             <th width="10%">Site</th>
                             <th width="10%">Taxable Sales</th>
                             <th width="10%">TDS</th>
@@ -26,7 +27,7 @@
                             <th width="10%">Reatation</th>
                             <th width="10%">NBK</th>
                             <th width="10%">Tax</th>
-                            <th width="15%">Total Payable</th>
+                            <th width="10%">Total Payable</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -34,6 +35,7 @@
                             <tr>
                                 <td>{{++$key}}</td>
                                 <td>{{$sale->updated_at->format('M d Y')}}</td>
+                                <td>{{str_limit($sale->customer->name,47)}}</td>
                                 <td>{{str_limit($sale->site->Name,47)}}</td>
                                 <td>{{str_limit($sale->taxable_sales, 47) }}</td>
                                 <td>{{str_limit($sale->tds_percent, 47) }}%</td>

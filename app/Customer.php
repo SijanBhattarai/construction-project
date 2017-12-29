@@ -27,4 +27,9 @@ class Customer extends Model
 
         return parent::delete($options);
     }
+
+    public function sales()
+    {
+        return $this->hasMany('App\Sales','customer_id');
+    }
 }

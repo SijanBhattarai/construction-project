@@ -5,7 +5,7 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-head">
-                {{--<header>Add Sales Details</header>--}}
+                <header>Add Sales Details</header>
                 <div class="tools visible-xs">
                     <a class="btn btn-default btn-ink" onclick="history.go(-1);return false;">
                         <i class="md md-arrow-back"></i>
