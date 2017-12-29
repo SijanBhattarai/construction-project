@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                {{ Form::select('customer', $customers, null, ['class' => 'form-control', 'placeholder' => 'Select a Site']) }}
+                                {{ Form::select('customer', $customers, null, ['class' => 'form-control', 'placeholder' => 'Select a Customer']) }}
                                 {{ Form::label('customer','customer*') }}
                             </div>
                         </div>
