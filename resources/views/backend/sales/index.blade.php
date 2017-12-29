@@ -39,7 +39,7 @@
                                 <td>{{str_limit($sale->site->Name,47)}}</td>
                                 <td>{{str_limit($sale->taxable_sales, 47) }}</td>
                                 <td>{{str_limit($sale->tds_percent, 47) }}%</td>
-                                <td>{{str_limit($sale->mobilization, 47) }}%</td>
+                                <td>{{str_limit($sale->mobilization, 47) }}</td>
                                 <td>{{str_limit($sale->reatation, 47) }}%</td>
                                 <td>{{str_limit($sale->nbk, 47) }}%</td>
                                 <td>{{str_limit($sale->tax, 47) }}%</td>
