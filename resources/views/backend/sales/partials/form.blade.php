@@ -67,16 +67,16 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                {{ Form::number('reatation',old('reatation'),['required', 'id' => 'my-editor']) }}
-                                {{ Form::label('reatation','reatation*') }}
+                                {{ Form::number('retention',old('retention'),['required', 'id' => 'my-editor']) }}
+                                {{ Form::label('retention','retention*') }}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                {{ Form::number('nbk',old('nbk'),['required', 'id' => 'my-editor']) }}
-                                {{ Form::label('nbk','nbk*') }}
+                                {{ Form::number('bnk',old('bnk'),['required', 'id' => 'my-editor']) }}
+                                {{ Form::label('bnk','bnk*') }}
                             </div>
                         </div>
                     </div>
@@ -91,8 +91,8 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                {{ Form::number('tax',old('tax'),['required', 'id' => 'my-editor']) }}
-                                {{ Form::label('tax','tax*') }}
+                                {{ Form::number('vat',old('vat'),['required', 'id' => 'my-editor']) }}
+                                {{ Form::label('vat','vat*') }}
                             </div>
                         </div>
                     </div>

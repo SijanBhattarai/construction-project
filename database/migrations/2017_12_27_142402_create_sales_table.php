@@ -19,10 +19,10 @@ class CreateSalesTable extends Migration
             $table->integer('customer_id');
             $table->double('taxable_sales');
             $table->float('tds_percent')->nullable();
-            $table->float('reatation');
+            $table->float('retention');
             $table->float('mobilization');
-            $table->float('nbk');
-            $table->float('tax');
+            $table->float('bnk');
+            $table->float('vat');
             $table->timestamps();
         });
     }

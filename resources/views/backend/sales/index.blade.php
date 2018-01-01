@@ -22,11 +22,11 @@
                             <th width="10%">Customer</th>
                             <th width="10%">Site</th>
                             <th width="10%">Taxable Sales</th>
-                            <th width="10%">TDS</th>
+                            <th width="10%">TDS Amount</th>
                             <th width="10%">Mobilization</th>
-                            <th width="10%">Reatation</th>
-                            <th width="10%">NBK</th>
-                            <th width="10%">Tax</th>
+                            <th width="10%">Reatation Amount</th>
+                            <th width="10%">BNK Amount</th>
+                            <th width="10%">Tax Amount</th>
                             <th width="10%">Total Payable</th>
                         </tr>
                         </thead>
@@ -38,11 +38,11 @@
                                 <td>{{str_limit($sale->customer->name,47)}}</td>
                                 <td>{{str_limit($sale->site->Name,47)}}</td>
                                 <td>{{str_limit($sale->taxable_sales, 47) }}</td>
-                                <td>{{str_limit($sale->tds_percent, 47) }}%</td>
+                                <td>{{str_limit($sale->TdsAmount, 47) }}</td>
                                 <td>{{str_limit($sale->mobilization, 47) }}</td>
-                                <td>{{str_limit($sale->reatation, 47) }}%</td>
-                                <td>{{str_limit($sale->nbk, 47) }}%</td>
-                                <td>{{str_limit($sale->tax, 47) }}%</td>
+                                <td>{{str_limit($sale->RetentionAmount, 47) }}</td>
+                                <td>{{str_limit($sale->BNKAmount, 47) }}</td>
+                                <td>{{str_limit($sale->vatAmount, 47) }}</td>
                                 <td>{{str_limit($sale->TotalPayable, 47) }}</td>
                                 {{--<td class="text-right">--}}
                                     {{--<a href="{{route('sales.edit', $sale->slug)}}" class="btn btn-flat btn-primary btn-xs">--}}

@@ -11,10 +11,10 @@ class Sales extends Model
         'customer_id',
         'taxable_sales',
         'tds_percent',
-        'reatation',
+        'retention',
         'mobilization',
-        'nbk',
-        'tax',
+        'bnk',
+        'vat',
     ];
 
     public function getRouteKeyName()
@@ -32,6 +32,23 @@ class Sales extends Model
 
     public function getTotalPayableAttribute()
     {
-        return $this->taxable_sales -(($this->tds*$this->taxable_sales)/100)-(($this->reatation*$this->taxable_sales)/100)-(($this->nbk*$this->taxable_sales)/100)-(($this->mobilization*$this->taxable_sales)/100)+(($this->tax*$this->taxable_sales)/100);
+        return ($this->taxable_sales - ($this->taxable_sales * ($this->retention + $this->tds_percent + $this->bnk)/100)+ $this->vatAmount -$this->mobilization);
+    }
+
+    public function getTdsAmountAttribute()
+    {
+        return ($this->tds_percent*$this->taxable_sales)/100;
+    }
+    public function getRetentionAmountAttribute()
+    {
+        return ($this->retention*$this->taxable_sales)/100;
+    }
+    public function getBNKAmountAttribute()
+    {
+        return ($this->bnk*$this->taxable_sales)/100;
+    }
+    public function getvatAmountAttribute()
+    {
+        return ($this->vat*$this->taxable_sales)/100;
     }
 }

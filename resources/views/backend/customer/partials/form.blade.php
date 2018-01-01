@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::email('email',old('email'),['class'=>'form-control', 'required']) }}
+                            {{ Form::email('email',old('email'),['class'=>'form-control']) }}
                             {{ Form::label('email','email*') }}
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::number('contact',old('contact'),['class'=>'form-control', 'required']) }}
+                            {{ Form::number('contact',old('contact'),['class'=>'form-control']) }}
                             {{ Form::label('contact','contact*') }}
                         </div>
                     </div>

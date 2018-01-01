@@ -35,10 +35,10 @@ class StoreSales extends FormRequest
             'customer_id' => $this->get('customer'),
             'taxable_sales' => $this->get('taxable_sales'),
             'tds_percent' =>$this->get('tds_percent'),
-            'reatation' => $this->get('reatation'),
+            'retention' => $this->get('retention'),
             'mobilization' => $this->get('mobilization'),
-            'nbk' => $this->get('nbk'),
-            'tax' => $this->get('tax'),
+            'bnk' => $this->get('bnk'),
+            'vat' => $this->get('vat'),
         ];
 
         return $inputs;
