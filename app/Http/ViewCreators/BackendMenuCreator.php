@@ -38,20 +38,20 @@ class BackendMenuCreator
         array_push($menu, [
             'class' => false,
             'route' => route('customer.index'),
-            'icon' => 'md md-list',
+            'icon' => 'md md-account-circle',
             'title' => 'Customer'
         ]);
         array_push($menu, [
             'class' => false,
             'route' => route('site.index'),
-            'icon' => 'md md-list',
+            'icon' => 'md md-room',
             'title' => 'Site'
         ]);
         
         array_push($menu, [
             'class' => false,
             'route' => route('accounthead.index'),
-            'icon' => 'md md-list',
+            'icon' => 'md md-account-balance',
             'title' => 'AccountHead'
         ]);
 
@@ -59,13 +59,13 @@ class BackendMenuCreator
         array_push($menu, [
             'class' => false,
             'route' => route('transaction.index'),
-            'icon' => 'md md-web',
+            'icon' => 'md md-book',
             'title' => 'Transaction'
         ]);
         array_push($menu, [
             'class' => false,
             'route' => route('sales.index'),
-            'icon' => 'md md-list',
+            'icon' => 'md md-account-box',
             'title' => 'Sales Details'
         ]);
 
@@ -79,8 +79,15 @@ class BackendMenuCreator
         array_push($menu, [
             'class' => false,
             'route' => route('report.index'),
-            'icon' => 'md md-list',
+            'icon' => 'md md-assignment',
             'title' => 'Reports'
+        ]);
+
+        array_push($menu, [
+            'class' => false,
+            'route' => route('requisition.index'),
+            'icon' => 'md md-dvr',
+            'title' => 'Requisitions'
         ]);
 
 

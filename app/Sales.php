@@ -21,10 +21,12 @@ class Sales extends Model
     {
         return 'slug';
     }
+
     public function site()
     {
         return $this->belongsTo('App\Site', 'site_id', 'id');
     }
+
     public function customer()
     {
         return $this->belongsTo('App\Customer', 'customer_id', 'id');
@@ -39,16 +41,21 @@ class Sales extends Model
     {
         return ($this->tds_percent*$this->taxable_sales)/100;
     }
+
     public function getRetentionAmountAttribute()
     {
         return ($this->retention*$this->taxable_sales)/100;
     }
+
     public function getBNKAmountAttribute()
     {
         return ($this->bnk*$this->taxable_sales)/100;
     }
-    public function getvatAmountAttribute()
+
+    public function getVatAmountAttribute()
     {
         return ($this->vat*$this->taxable_sales)/100;
     }
+
+    
 }

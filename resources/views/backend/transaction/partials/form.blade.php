@@ -104,6 +104,18 @@
                     </div>
                 </div>
             </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        {{ Form::number('DR Amount',old('DR Amount'),['required', 'id' => 'my-editor']) }}
+                        {{ Form::label('DR Amount','DR Amount*') }}
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        {{ Form::number('CR Amount',old('CR Amount'),['required', 'id' => 'my-editor']) }}
+                        {{ Form::label('CR Amount','CR Amount*') }}
+                    </div>
+                </div>
             <div class="card-actionbar">
                 <div class="card-actionbar-row">
                     <input type="submit" name="draft" class="btn btn-info ink-reaction" value="Save">

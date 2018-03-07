@@ -42,7 +42,7 @@
                                 <td>{{str_limit($sale->mobilization, 47) }}</td>
                                 <td>{{str_limit($sale->RetentionAmount, 47) }}</td>
                                 <td>{{str_limit($sale->BNKAmount, 47) }}</td>
-                                <td>{{str_limit($sale->vatAmount, 47) }}</td>
+                                <td>{{str_limit($sale->VatAmount, 47) }}</td>
                                 <td>{{str_limit($sale->TotalPayable, 47) }}</td>
                                 {{--<td class="text-right">--}}
                                     {{--<a href="{{route('sales.edit', $sale->slug)}}" class="btn btn-flat btn-primary btn-xs">--}}

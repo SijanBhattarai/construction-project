@@ -24,7 +24,6 @@ class TransactionController extends Controller
         DB::transaction(function () use ($request)
         {
             $data = $request->data();
-
             Transaction::create($data);
 
         });
