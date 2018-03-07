@@ -1,11 +1,11 @@
 @extends('backend.layouts.app')
-@section('title', 'Sales')
+@section('title', 'Requisition')
 @section('content')
     <section>
         <div class="section-body">
             <div class="card">
                 <div class="card-head">
-                    <header class="text-capitalize">All Sales Details</header>
+                    <header class="text-capitalize">All Requisition Details</header>
                     <div class="tools">
                         <a class="btn btn-primary ink-reaction" href="{{ route('requisition.create') }}">
                             <i class="md md-add"></i>
