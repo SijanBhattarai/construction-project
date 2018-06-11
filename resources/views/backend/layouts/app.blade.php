@@ -14,7 +14,6 @@
 
     <!-- Title-->
     <title>{{ config('app.name') }} - @yield('title', 'Page')</title>
-
     <!-- Styles -->
     <link href="//fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="{{ asset('backend/css/materialadmin-bootstrap.css') }}">
@@ -50,7 +49,6 @@
     @include('backend.layouts.partials.global-script')
 
     <!-- Scripts -->
-    <script src="{{ asset('backend/js/libs/jquery/jquery-1.11.2.min.js') }}"></script>
     <script src="{{ asset('backend/js/libs/jquery/jquery-migrate-1.2.1.min.js') }}"></script>
     <script src="{{ asset('backend/js/libs/bootstrap/bootstrap.min.js') }}"></script>
     <script src="{{ asset('backend/js/libs/spin.js/spin.min.js') }}"></script>

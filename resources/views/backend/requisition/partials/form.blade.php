@@ -59,8 +59,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::text('remarks',old('remarks'),['required', 'id' => 'my-editor']) }}
-                            {{ Form::label('remarks','remarks*') }}
+                            {{ Form::text('remarks',old('remarks'),['id' => 'my-editor']) }}
+                            {{ Form::label('remarks','remarks') }}
                         </div>
                     </div>
                 </div>

@@ -36,8 +36,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::textarea('description',old('description'),['required', 'id' => 'my-editor']) }}
-                            <p class="help-block">Description*</p>
+                            {{ Form::textarea('description',old('description'),['id' => 'my-editor']) }}
+                            <p class="help-block">Description</p>
                         </div>
                     </div>
                 </div>

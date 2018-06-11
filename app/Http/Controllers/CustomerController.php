@@ -16,6 +16,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
+       // echo phpinfo();
         $customers = Customer::latest()->get([ 'name', 'address', 'email', 'contact' ]);
 
         return view('backend.customer.index', compact('customers'));
@@ -26,7 +27,6 @@ class CustomerController extends Controller
      */
     public function create()
     {
-
         return view('backend.customer.create');
     }
 
@@ -43,7 +43,6 @@ class CustomerController extends Controller
             Customer::create($data);
 
         });
-
         return redirect()->route('customer.index')->withSuccess(trans('messages.create_success', [ 'entity' => 'Customer' ]));
     }
 
@@ -62,8 +61,6 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-
-
         return view('backend.customer.edit',compact('customer'));
     }
 
@@ -77,8 +74,6 @@ class CustomerController extends Controller
         DB::transaction(function () use ($request, $customer)
         {
             $customer->update($request->data($customer));
-
-
         });
 
         return redirect()->route('customer.index')->withSuccess('Customer has been updated');
@@ -90,7 +85,6 @@ class CustomerController extends Controller
      */
     public function delete(Customer $customer)
     {
-
         $customer->delete();
 
         return back()->withSuccess(trans('message.delete_success', [ 'entity' => 'Customer' ]));

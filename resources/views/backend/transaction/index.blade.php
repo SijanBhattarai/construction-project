@@ -1,3 +1,5 @@
+<script src="{{ asset('backend/js/libs/jquery/jquery-1.11.2.min.js') }}"></script>
+
 @extends('backend.layouts.app')
 @section('title', 'Transaction')
 @section('content')
@@ -14,21 +16,21 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <table class="table table-hover">
+                    <table id="transactionTable" class="table table-hover table-striped">
                         <thead>
-                        <tr>
-                            <th width="5%">#</th>
-                            <th width="5%">Date</th>
-                            <th width="10%">Heading</th>
-                            <th width="10%">Account Head</th>
-                            <th width="10%">Site</th>
-                            <th width="5%">Quantity</th>
-                            <th width="10%">Rate</th>
-                            <th width="5%">Amount</th>
-                            <th width="10%">Cheque No</th>
-                            <th width="10%">Cheque Date</th>
-                            <th width="10%">OS No</th>
-                        </tr>
+                            <tr>
+                                <th width="5%">#</th>
+                                <th width="5%">Date</th>
+                                <th width="10%">Heading</th>
+                                <th width="10%">Account Head</th>
+                                <th width="10%">Site</th>
+                                <th width="5%">Quantity</th>
+                                <th width="10%">Rate</th>
+                                <th width="5%">Amount</th>
+                                <th width="10%">Cheque No</th>
+                                <th width="10%">Cheque Date</th>
+                                <th width="10%">OS No</th>
+                            </tr>
                         </thead>
                         <tbody>
                         @forelse($transactions as $key => $transaction)
@@ -46,9 +48,9 @@
                                 <td>{{str_limit($transaction->of_no,47)}}</td>
                             </tr>
                         @empty
-                            <tr>
+                            <!-- <tr>
                                 <td colspan="4" class="text-center">No Transactions available.</td>
-                            </tr>
+                            </tr> -->
                         @endforelse
                         </tbody>
                     </table>
@@ -57,3 +59,8 @@
         </div>
     </section>
 @stop
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#transactionTable').dataTable();
+    });
+</script>

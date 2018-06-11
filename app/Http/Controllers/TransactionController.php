@@ -34,7 +34,9 @@ class TransactionController extends Controller
     {
 //        $transactions = Transaction::latest()->get([ 'name']);
         $accountheads = AccountHead::latest()->pluck('accountname','id')->toArray();
-        $sites=Site::latest()->pluck('name', 'id')->toArray();
+        // $sites=DB::select("select a.id,a.name from sites a");
+        $sites = Site::pluck('name','id')->toArray();
+        
         $customers=Customer::latest()->pluck('name', 'id')->toArray();
         return view('backend.transaction.create', compact('accountheads','sites','customers'));
     }

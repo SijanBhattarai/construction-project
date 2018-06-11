@@ -1,5 +1,5 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.js"></script>
-<script src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
+<script src="{{ asset('backend/js/libs/jquery/jquery-1.11.2.min.js') }}"></script>
+
 <div class="row">
     <div class="col-md-12">
         @include('partials.errors')
@@ -21,8 +21,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::text('heading',old('heading'),['class'=>'form-control', 'required']) }}
-                            {{ Form::label('heading','heading*') }}
+                            <label for="heading">Heading</label>
+                            <input type="text" name="heading"  class="form-control">
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::select('site', $sites, null, ['class' => 'form-control', 'placeholder' => 'Select a Site']) }}
+                            <label for="site">Site</label>
+                            {{ Form::select('site', $sites, null, ['class' => 'form-control', 'placeholder' => 'Select a Site' , 'id'=>site]) }}
                             {{ Form::label('site','site*') }}
                         </div>
                     </div>
@@ -78,16 +79,16 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    {{ Form::number('cheque_no',old('cheque_no'),['required', 'id' => 'my-editor']) }}
-                                    {{ Form::label('cheque_no','cheque_no*') }}
+                                    {{ Form::number('cheque_no',old('cheque_no'),['id' => 'my-editor']) }}
+                                    {{ Form::label('cheque_no','cheque_no') }}
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    {{ Form::Date('cheque_date',old('cheque_date'),['required', 'id' => 'my-editor']) }}
-                                    {{ Form::label('cheque_date','cheque_date*') }}
+                                    {{ Form::Date('cheque_date',old('cheque_date'),['id' => 'my-editor']) }}
+                                    {{ Form::label('cheque_date','cheque_date') }}
                                 </div>
                             </div>
                         </div>
@@ -96,8 +97,8 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    {{ Form::number('os_no',old('os_no'),['required', 'id' => 'my-editor']) }}
-                                    {{ Form::label('os_no','os_no*') }}
+                                    {{ Form::number('os_no',old('os_no'),['id' => 'my-editor']) }}
+                                    {{ Form::label('os_no','os_no') }}
                                 </div>
                             </div>
                         </div>
@@ -106,14 +107,14 @@
             </div>
                 <div class="col-sm-12">
                     <div class="form-group">
-                        {{ Form::number('DR Amount',old('DR Amount'),['required', 'id' => 'my-editor']) }}
-                        {{ Form::label('DR Amount','DR Amount*') }}
+                        {{ Form::number('DR Amount',old('DR Amount'),['id' => 'my-editor']) }}
+                        {{ Form::label('DR Amount','DR Amount') }}
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="form-group">
-                        {{ Form::number('CR Amount',old('CR Amount'),['required', 'id' => 'my-editor']) }}
-                        {{ Form::label('CR Amount','CR Amount*') }}
+                        {{ Form::number('CR Amount',old('CR Amount'),['id' => 'my-editor']) }}
+                        {{ Form::label('CR Amount','CR Amount') }}
                     </div>
                 </div>
             <div class="card-actionbar">
@@ -144,19 +145,11 @@
 @endpush
 
 @push('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.js"></script>
-    <script src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
     <script src="{{ asset('backend/js/libs/jquery-validation/dist/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('backend/js/libs/jquery-validation/dist/additional-methods.min.js') }}"></script>
     <script src="{{ asset('/backend/js/bootstrap-select.js') }}"></script>
 
 <script>
-new Vue({
-    el: '#radio',
 
-    data:{
-        selected:''
-    }
-})
 </script>
 @endpush

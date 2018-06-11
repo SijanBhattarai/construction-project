@@ -57,8 +57,8 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    {{ Form::number('tds_percent',old('tds_percent'),['required', 'id' => 'my-editor']) }}
-                                    {{ Form::label('tds_percent','tds_percent*') }}
+                                    {{ Form::number('tds_percent',old('tds_percent'),['id' => 'my-editor']) }}
+                                    {{ Form::label('tds_percent','tds_percent') }}
                                 </div>
                             </div>
                         </div>
@@ -67,24 +67,24 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                {{ Form::number('retention',old('retention'),['required', 'id' => 'my-editor']) }}
-                                {{ Form::label('retention','retention*') }}
+                                {{ Form::number('retention',old('retention'),[ 'id' => 'my-editor']) }}
+                                {{ Form::label('retention','retention') }}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                {{ Form::number('bnk',old('bnk'),['required', 'id' => 'my-editor']) }}
-                                {{ Form::label('bnk','bnk*') }}
+                                {{ Form::number('bnk',old('bnk'),[ 'id' => 'my-editor']) }}
+                                {{ Form::label('bnk','bnk') }}
                             </div>
                         </div>
                     </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::number('mobilization',old('mobilization'),['required', 'id' => 'my-editor']) }}
-                            {{ Form::label('mobilization','mobilization*') }}
+                            {{ Form::number('mobilization',old('mobilization'),[ 'id' => 'my-editor']) }}
+                            {{ Form::label('mobilization','mobilization') }}
                         </div>
                     </div>
                 </div>

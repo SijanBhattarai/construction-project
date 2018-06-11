@@ -1,3 +1,5 @@
+<script src="{{ asset('backend/js/libs/jquery/jquery-1.11.2.min.js') }}"></script>
+
 @extends('backend.layouts.app')
 
 @section('title', 'AccountHead')

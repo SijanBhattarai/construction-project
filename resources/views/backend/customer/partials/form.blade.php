@@ -27,8 +27,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {{ Form::text('address',old('address'),['class'=>'form-control', 'required']) }}
-                            {{ Form::label('address','address*') }}
+                            {{ Form::text('address',old('address'),['class'=>'form-control']) }}
+                            {{ Form::label('address','address') }}
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                     <div class="col-sm-12">
                         <div class="form-group">
                             {{ Form::email('email',old('email'),['class'=>'form-control']) }}
-                            {{ Form::label('email','email*') }}
+                            {{ Form::label('email','email') }}
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                     <div class="col-sm-12">
                         <div class="form-group">
                             {{ Form::number('contact',old('contact'),['class'=>'form-control']) }}
-                            {{ Form::label('contact','contact*') }}
+                            {{ Form::label('contact','contact') }}
                         </div>
                     </div>
                 </div>

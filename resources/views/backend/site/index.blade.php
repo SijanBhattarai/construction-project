@@ -1,3 +1,5 @@
+<script src="{{ asset('backend/js/libs/jquery/jquery-1.11.2.min.js') }}"></script>
+
 @extends('backend.layouts.app')
 
 @section('title', 'Site')
@@ -17,7 +19,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <table class="table table-hover">
+                    <table id="siteTable" class="table table-hover">
                         <thead>
                         <tr>
                             <th width="5%">#</th>
@@ -53,4 +55,10 @@
             </div>
         </div>
     </section>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('siteTable').dataTable();
+        });
+    </script>
 @stop
