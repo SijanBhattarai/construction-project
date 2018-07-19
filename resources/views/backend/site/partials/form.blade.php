@@ -1,3 +1,5 @@
+<script src="{{ asset('backend/js/libs/jquery/jquery-1.11.2.min.js') }}"></script>
+
 <div class="row">
     <div class="col-md-12">
         @include('partials.errors')
@@ -75,7 +77,7 @@
 <script src="{{ asset('backend/js/libs/jquery-validation/dist/additional-methods.min.js') }}"></script>
 <script src="{{ asset('backend/js/libs/dropify/dropify.min.js') }}"></script>
 <script src="{{ asset('/backend/js/bootstrap-select.js') }}"></script>
-<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script src="vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('my-editor', {
         filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',

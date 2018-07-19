@@ -27,4 +27,21 @@ class UpdateTransaction extends FormRequest
             //
         ];
     }
+
+    public function Data()
+    {
+      $inputs = [
+          'heading' => $this->get('heading'),
+          'accounthead_id' => $this->get('accounthead'),
+          'site_id' => $this->get('site'),
+          'quantity' => $this->get('quantity'),
+          'rate' => $this->get('rate'),
+          'cheque_no' =>$this->get('cheque_no'),
+          'cheque_date' => $this->get('cheque_date'),
+          'os_no' => $this->get('of_no'),
+          'slug' => str_slug($this->get('heading'))
+      ];
+      
+      return $inputs;
+    }
 }

@@ -42,6 +42,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'host' => '192.168.10.10',
+            'port' => env('DB_PORT', 3306),
             'database' => 'homestead',
             'username' => 'homestead',
             'password' => 'secret',

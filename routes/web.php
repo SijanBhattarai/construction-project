@@ -80,11 +80,12 @@ Route::get('logout', 'Auth\LoginController@logout');
 //transaction route
 
 Route::group([ 'as' => 'transaction.', 'prefix' => 'transaction' ], function ()
-
 {
     Route::get('', 'TransactionController@index')->name('index');
     Route::get('create', 'TransactionController@create')->name('create');
     Route::post('store', 'TransactionController@store')->name('store');
+    Route::post('getDetails','TransactionController@getTransactionDetailsById');
+    Route::post('edit', 'TransactionController@edit')->name('edit');
 });
 
 Route::group([ 'as' => 'sales.', 'prefix' => 'sales' ], function ()
